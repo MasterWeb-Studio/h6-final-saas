@@ -1,8 +1,10 @@
 import type { AboutContent } from './types';
+import { SectionImageFrame } from '../_helpers/SectionImageFrame';
 
-// Sol metin + sağ görsel alanı. Editorial/premium. H6 media pipeline'ına kadar
-// sağ blok gradient placeholder. Brief opsiyonel imageUrl/imageAlt şimdilik
-// AboutSection şemasında yok — placeholder görseli kullanılır.
+// Sol metin + sağ görsel alanı. Editorial/premium.
+// Sprint 18.5 G1 — content.image remote ise ImageWithCredit 4:5 aspect;
+// image yok veya placeholder ise brand gradient fallback (variant identity
+// preserve edilir — sağ kolon hiçbir zaman boş kalmaz).
 export function AboutWithImage({ content }: { content: AboutContent }) {
   return (
     <section
@@ -46,14 +48,10 @@ export function AboutWithImage({ content }: { content: AboutContent }) {
           </div>
 
           <div className="relative order-first lg:order-last">
-            <div
-              className="aspect-[4/5] w-full"
-              style={{
-                background:
-                  'linear-gradient(160deg, var(--color-secondary) 0%, var(--color-primary) 55%, var(--color-accent) 100%)',
-                borderRadius: 'var(--radius-card, var(--radius))',
-              }}
-              aria-hidden="true"
+            <SectionImageFrame
+              image={content.image}
+              aspect="aspect-[4/5]"
+              fallbackGradient="linear-gradient(160deg, var(--color-secondary) 0%, var(--color-primary) 55%, var(--color-accent) 100%)"
             />
           </div>
         </div>

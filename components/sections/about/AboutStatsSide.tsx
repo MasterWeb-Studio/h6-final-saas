@@ -1,12 +1,13 @@
 import type { AboutContent } from './types';
+import { SectionImageFrame } from '../_helpers/SectionImageFrame';
 
-// Sol metin + sağda yan yana istatistik bloğu (2x2 grid). about.stats yoksa
-// agent'ın brief kuralı gereği stats-side variant seçilmemeli, ama güvenli
-// fallback için stats yoksa 2 sütunda sadece metin alanı göstermek yerine
-// stats-side davranışını TextOnly'ye yakın bırakıyoruz — stats bloğu yoksa
-// sağ kolon nötr/boş; tasarım için agent seçimi kritik.
+// Sol metin + sağda yan yana istatistik bloğu (2x2 grid).
+// Sprint 18.5 G1 — stats yoksa sağ kolonda image fallback (görsel varsa);
+// stats var ise stats dominant kalır (image göz ardı edilir — variant
+// kimliği stats olarak korunur). Hiçbir zaman sağ kolon boş kalmaz.
 export function AboutStatsSide({ content }: { content: AboutContent }) {
   const stats = content.stats ?? [];
+  const showImageInsteadOfStats = stats.length === 0 && Boolean(content.image);
 
   return (
     <section
@@ -49,6 +50,15 @@ export function AboutStatsSide({ content }: { content: AboutContent }) {
             </div>
           </div>
 
+          {showImageInsteadOfStats ? (
+            <div className="relative">
+              <SectionImageFrame
+                image={content.image}
+                aspect="aspect-[4/5]"
+                showPlaceholderFallback={false}
+              />
+            </div>
+          ) : (
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             {stats.map((stat, index) => (
               <div
@@ -81,6 +91,7 @@ export function AboutStatsSide({ content }: { content: AboutContent }) {
               </div>
             ))}
           </div>
+          )}
         </div>
       </div>
     </section>

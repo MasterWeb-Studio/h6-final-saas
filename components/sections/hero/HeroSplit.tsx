@@ -1,9 +1,12 @@
 import Link from 'next/link';
 import type { HeroContent } from './types';
+import { SectionImageFrame } from '../_helpers/SectionImageFrame';
 
 // Split hero — iki sütun. Sol: metin + CTA. Sağ: görsel (varsa) ya da renkli
 // placeholder blok. Ürün fotoğraflı SaaS, e-ticaret veya fiziksel ürün siteleri
 // için. Mobilde iki bölüm üst-üste düşer.
+// Sprint 18.5 G1 — content.image remote ise ImageWithCredit; placeholder ise
+// gradient blok (eski davranış preserve).
 export function HeroSplit({ content }: { content: HeroContent }) {
   return (
     <section
@@ -82,14 +85,11 @@ export function HeroSplit({ content }: { content: HeroContent }) {
           </div>
 
           <div className="relative">
-            <div
-              className="aspect-[4/3] w-full"
-              style={{
-                background:
-                  'linear-gradient(135deg, var(--color-secondary) 0%, var(--color-accent) 100%)',
-                borderRadius: 'var(--radius-card, var(--radius))',
-              }}
-              aria-hidden="true"
+            <SectionImageFrame
+              image={content.image}
+              aspect="aspect-[4/3]"
+              priority
+              fallbackGradient="linear-gradient(135deg, var(--color-secondary) 0%, var(--color-accent) 100%)"
             />
           </div>
         </div>

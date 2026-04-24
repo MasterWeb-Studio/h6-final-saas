@@ -1,7 +1,7 @@
 import type { ContentPlan } from './content-types';
 
 // Bu dosya frontend-builder tarafından güncellendi (polish sonrası).
-// Son güncelleme: 2026-04-21T21:47:52.526Z
+// Son güncelleme: 2026-04-24T15:35:44.942Z
 export const content: ContentPlan = {
   "meta": {
     "companyName": "Flowbase",
@@ -14,12 +14,12 @@ export const content: ContentPlan = {
         "href": "/"
       },
       {
-        "label": "Özellikler",
-        "href": "/services"
-      },
-      {
         "label": "Hakkımızda",
         "href": "/about"
+      },
+      {
+        "label": "Özellikler",
+        "href": "/services"
       },
       {
         "label": "Blog",
@@ -31,7 +31,7 @@ export const content: ContentPlan = {
       }
     ],
     "footer": {
-      "about": "Flowbase, modern ekiplerin daha hızlı çalışması için görev yönetimi ve iletişimi tek çatı altında toplar. Kurulum yok, karmaşıklık yok.",
+      "about": "Flowbase, modern ekiplerin iş akışını ve iletişimini tek platformda yönetmesini sağlar. Hafif, hızlı, güvenilir.",
       "columns": [
         {
           "title": "Ürün",
@@ -98,15 +98,15 @@ export const content: ContentPlan = {
     {
       "slug": "home",
       "title": "Ana Sayfa",
-      "metaTitle": "Flowbase — Ekip İş Yönetimi ve İletişim Platformu",
-      "metaDescription": "Görev takibi ve takım iletişimini tek yerde yönet. Flowbase ile ekibini hızlandır. 14 gün ücretsiz, kart gerekmez.",
+      "metaTitle": "Flowbase — Ekibinin İş Akışını Tek Yerde Yönet",
+      "metaDescription": "Görev takibi, takım iletişimi ve proje yönetimi tek platformda. 14 gün ücretsiz dene, kart gerekmez.",
       "sections": [
         {
           "type": "hero",
-          "headline": "Ekibinin odağı, dağılmadan kalır.",
-          "subheadline": "Görevler, sohbetler, güncellemeler — tek platformda akar. Sabah açarsın, ekip nerede bilirsin.",
+          "headline": "Ekibin odaklanır, iş kendiliğinden ilerler",
+          "subheadline": "Görev takibi, takım sohbeti, proje akışı — tek platformda. Kurulum yok, öğrenme eğrisi yok.",
           "primaryCta": {
-            "label": "14 Gün Ücretsiz Dene",
+            "label": "Ücretsiz Başla",
             "href": "/contact"
           },
           "secondaryCta": {
@@ -115,8 +115,14 @@ export const content: ContentPlan = {
           },
           "variant": "centered",
           "image": {
-            "type": "placeholder",
-            "alt": "modern office workspace laptop team collaboration"
+            "type": "remote",
+            "url": "https://images.pexels.com/photos/5716007/pexels-photo-5716007.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+            "alt": "Modern team collaboration in office with laptops and tablets focusing on charts and communication.",
+            "credit": "Artem Podrez / pexels",
+            "creditUrl": "https://www.pexels.com/@artempodrez",
+            "color": "#8E847F",
+            "width": 6144,
+            "height": 3456
           }
         },
         {
@@ -125,28 +131,28 @@ export const content: ContentPlan = {
           "items": [
             {
               "icon": "CheckCircle",
-              "title": "Görevler, net ve izlenebilir",
-              "description": "Her görevi atayın, önceliklendirin ve takip edin. Kimin ne yaptığını her zaman bilin."
+              "title": "Görevler Kaybolmaz",
+              "description": "Her görev atanır, takip edilir, teslim edilir. Hiçbir şey gözden kaçmaz."
             },
             {
               "icon": "MessageSquare",
-              "title": "İletişim, bağlamında kal",
-              "description": "Sohbetler doğrudan görevlerin yanında. E-posta zincirlerine son."
+              "title": "İletişim Görevle Birlikte",
+              "description": "Tartışmalar doğrudan görev üzerinde — e-posta karmaşası biter."
             },
             {
               "icon": "Zap",
-              "title": "Kurulum değil, kullanım",
-              "description": "Dakikalar içinde ekibini davet et, hemen çalışmaya başla."
+              "title": "Ekip Hızla Adapte Olur",
+              "description": "Sezgisel arayüz sayesinde ekibin ilk günden verimli çalışmaya başlar."
             }
           ],
           "variant": "three-col"
         },
         {
           "type": "about",
-          "headline": "Neden bunu yaptık?",
+          "headline": "Neden Flowbase'i Yaptık?",
           "body": [
-            "Flowbase, ekiplerin gereksiz toplantılar ve dağınık araçlar arasında kaybolduğunu gördükten sonra kuruldu. Görev yönetimi ve iletişim birbirinden kopuk olunca iş de kopuyor.",
-            "Tek bir akıcı deneyimde her şeyi bir araya getirdik — çünkü iyi iş, iyi araçlarla başlar."
+            "Çoğu ekip birden fazla araç arasında kaybolur: biri görev için, biri sohbet için, biri dosya için. Flowbase bu dağınıklığı ortadan kaldırmak için kuruldu.",
+            "10 ila 200 kişilik ekiplerin gerçek ihtiyaçlarından yola çıktık. Sonuç: hafif, odaklı ve ekibini yavaşlatmayan bir platform."
           ],
           "variant": "text-only"
         },
@@ -181,20 +187,20 @@ export const content: ContentPlan = {
           "headline": "Temel Özellikler",
           "items": [
             {
-              "title": "Görev ve Proje Yönetimi",
-              "description": "Projeler oluştur, görevleri atayın, son tarihleri belirle. Ekibin ilerleyişini tek ekranda gör."
+              "title": "Görev ve Proje Takibi",
+              "description": "Kanban, liste veya takvim görünümüyle projeleri yönet. Öncelikleri belirle, son tarihleri takip et, ekibe dağıt."
             },
             {
               "title": "Takım İçi Mesajlaşma",
-              "description": "Kanal bazlı sohbetler ve doğrudan mesajlar. Konuşmalar her zaman doğru bağlamda."
+              "description": "Kanal bazlı sohbet ve doğrudan mesajlaşma. Konuşmalar görevlere bağlı kalır, kaybolmaz."
             },
             {
-              "title": "Bildirim ve Öncelik Yönetimi",
-              "description": "Önemli olanı öne çıkar, gürültüyü filtrele. Ekibin odaklanmasını sağla."
+              "title": "Bildirim ve Hatırlatıcılar",
+              "description": "Doğru kişiye, doğru zamanda bildirim. Gürültüsüz, odak bozmayan akıllı uyarılar."
             },
             {
-              "title": "Raporlama ve Ekip Görünürlüğü",
-              "description": "Kim ne üzerinde çalışıyor? Haftalık ilerlemeyi otomatik özetle takip et."
+              "title": "Raporlama ve Görünürlük",
+              "description": "Ekip yükünü, ilerlemeyi ve tıkanan noktaları tek ekranda gör. Toplantı öncesi hazırlık biter."
             }
           ],
           "variant": "cards"
@@ -225,15 +231,15 @@ export const content: ContentPlan = {
         },
         {
           "type": "cta",
-          "headline": "Ekibinle hemen başla, sonucu gör.",
-          "subheadline": "14 gün ücretsiz, kart gerekmez. Kurulum dakikalar alır, farkı ilk günden hissedersin.",
+          "headline": "Ekibinle daha hızlı ilerle",
+          "subheadline": "14 gün ücretsiz dene. Kart istemiyoruz, sadece sonuç.",
           "primaryCta": {
-            "label": "Ücretsiz Başla",
+            "label": "Ücretsiz Dene",
             "href": "/contact"
           },
           "secondaryCta": {
-            "label": "Demo Talep Et",
-            "href": "/contact"
+            "label": "Özelliklere Bak",
+            "href": "/services"
           },
           "variant": "split-action"
         }
@@ -243,65 +249,55 @@ export const content: ContentPlan = {
       "slug": "about",
       "title": "Hakkımızda",
       "metaTitle": "Hakkımızda | Flowbase",
-      "metaDescription": "Flowbase'in hikayesini ve vizyonunu öğren. Modern ekipler için iş yönetimini yeniden düşündük.",
+      "metaDescription": "Flowbase'in hikayesi: modern ekipler için iş yönetimini yeniden tasarlayan ekibi ve yaklaşımı tanıyın.",
       "sections": [
         {
           "type": "hero",
-          "headline": "İşi kolaylaştırmak için buradayız.",
-          "subheadline": "Dağınık araçlara değil, ekibine odaklanman için Flowbase'i inşa ettik.",
-          "variant": "centered",
-          "image": {
-            "type": "remote",
-            "url": "https://images.unsplash.com/photo-1758873269117-d5845126928a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MzA1NTV8MHwxfHNlYXJjaHw0fHx0ZWFtJTIwY29sbGFib3JhdGlvbiUyMHdoaXRlYm9hcmQlMjBzdGFydHVwJTIwb2ZmaWNlfGVufDF8MHx8fDE3NzY4MDgwNjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
-            "alt": "Team collaborating around a whiteboard in an office.",
-            "credit": "Vitaly Gariev / unsplash",
-            "creditUrl": "https://unsplash.com/@silverkblack",
-            "color": "#a6a6a6",
-            "width": 3840,
-            "height": 2160
-          }
+          "headline": "İş akışını tasarlayanlar",
+          "subheadline": "Ekiplerin daha az araçla daha çok iş çıkarması için Flowbase'i kurduk.",
+          "variant": "centered"
         },
         {
           "type": "about",
-          "headline": "Bir sorundan doğdu.",
+          "headline": "Hikayemiz",
           "body": [
-            "Flowbase, farklı araçlar arasında geçen zaman kaybını ve kopuk iletişimi çözmek için kuruldu. Modern ekipler daha az sürtünme, daha fazla netlik hak ediyor.",
-            "Bugün, 10'dan 200'e kadar büyüyen startup ve scale-up ekipleri Flowbase ile işlerini yönetiyor — daha az toplantı, daha çok iş."
+            "Flowbase, dağınık araçlar arasında kaybolan ekiplerin sorununu çözmek için kuruldu. Kurucu ekip, operasyon ve ürün geliştirme deneyiminden yola çıkarak iş yönetimini sıfırdan tasarladı.",
+            "Bugün onlarca startup ve scale-up ekibi Flowbase'i günlük iş akışının merkezine koyuyor. Hafif tutmak, odak bozmamak ve ekibin dilini konuşmak temel tasarım ilkemiz."
           ],
           "variant": "text-only"
         },
         {
           "type": "feature-grid",
-          "headline": "Çalışma biçimimiz",
+          "headline": "Nasıl Çalışıyoruz?",
           "items": [
             {
               "icon": "Target",
-              "title": "Odak önce gelir",
-              "description": "Her özelliği ekiplerin gerçek iş akışından öğrenerek tasarlıyoruz."
+              "title": "Odak Önce Gelir",
+              "description": "Her özellik, ekibin dikkatini dağıtmadan işi ilerletmek için tasarlanır."
             },
             {
               "icon": "Users",
-              "title": "Ekip önce gelir",
-              "description": "Bireysel araç değil, takım deneyimi. Her karar bu perspektiften çıkıyor."
+              "title": "Ekiple Birlikte Geliştiririz",
+              "description": "Kullanıcı geri bildirimi ürün kararlarının merkezinde. Her sprint müşteri sesiyle şekillenir."
             },
             {
               "icon": "Layers",
-              "title": "Sadelik şart",
-              "description": "Karmaşıklık eklemek kolay. Gereksizi çıkarmak — bunu seçiyoruz."
+              "title": "Basit Ama Güçlü",
+              "description": "Karmaşık iş akışlarını sade bir arayüzde çözmek temel mühendislik prensiplerimizden biri."
             }
           ],
           "variant": "three-col"
         },
         {
           "type": "cta",
-          "headline": "Ekibini Flowbase'e taşı.",
-          "subheadline": "14 gün ücretsiz dene, farkı ekibinle birlikte gör.",
+          "headline": "Ekibine uygun mu? Dene ve gör.",
+          "subheadline": "14 gün boyunca tüm özelliklere ücretsiz eriş.",
           "primaryCta": {
             "label": "Ücretsiz Başla",
             "href": "/contact"
           },
           "secondaryCta": {
-            "label": "Özellikler",
+            "label": "Özellikleri İncele",
             "href": "/services"
           },
           "variant": "split-action"
@@ -312,12 +308,12 @@ export const content: ContentPlan = {
       "slug": "services",
       "title": "Özellikler",
       "metaTitle": "Özellikler | Flowbase",
-      "metaDescription": "Flowbase'in görev yönetimi, takım iletişimi, raporlama ve entegrasyon özelliklerini keşfet. Ekibine uygun araçlar.",
+      "metaDescription": "Flowbase'in görev takibi, takım iletişimi ve raporlama özelliklerini keşfet. Modern ekipler için tasarlandı.",
       "sections": [
         {
           "type": "hero",
-          "headline": "Her ekip için doğru araçlar.",
-          "subheadline": "Görev takibinden raporlamaya, iletişimden entegrasyonlara — ihtiyacın olan her şey burada.",
+          "headline": "Her şey tek platformda, fazlası yok",
+          "subheadline": "Ekibinin ihtiyacı olan araçlar — fazlası değil, eksiği de değil.",
           "variant": "centered"
         },
         {
@@ -326,33 +322,33 @@ export const content: ContentPlan = {
           "items": [
             {
               "title": "Proje ve Görev Yönetimi",
-              "description": "Kanban, liste veya takvim görünümüyle projelerini yönet. Görevleri atayın, önceliklendir, teslim tarihlerini belirle."
+              "description": "Kanban, liste ve takvim görünümleri arasında geçiş yap. Görevleri önceliklendir, atama yap, son tarihleri belirle."
             },
             {
               "title": "Takım İletişimi",
-              "description": "Kanal bazlı mesajlaşma ve görev yorumları. Konuşmalar her zaman doğru bağlamda — e-posta karmaşasına son."
+              "description": "Kanal bazlı mesajlaşma ve görev yorumları. Tartışmalar bağlamını kaybetmez; her sohbet ilgili görevin yanında durur."
             },
             {
-              "title": "Raporlama ve Analizler",
-              "description": "Ekibin haftalık ve aylık ilerleyişini otomatik raporlarla takip et. Hangi projenin nerede durduğunu tek bakışta gör."
+              "title": "Akıllı Bildirimler",
+              "description": "Sadece seni ilgilendiren bildirimler gelir. Gürültüyü sen kontrol edersin — platform seni değil, sen platformu yönetirsin."
             },
             {
-              "title": "Entegrasyonlar",
-              "description": "Slack, Google Drive ve daha fazlasıyla bağlan. Mevcut iş akışını bozmadan Flowbase'i ekibine entegre et."
+              "title": "Ekip Raporları",
+              "description": "Haftalık ilerleme, görev dağılımı ve tıkanan noktalar tek ekranda. Yöneticiler için net görünürlük, ekip için şeffaflık."
             }
           ],
           "variant": "cards"
         },
         {
           "type": "cta",
-          "headline": "Görmek mi istiyorsun?",
-          "subheadline": "14 gün ücretsiz başla ya da bize bir demo talebi bırak.",
+          "headline": "Kullanmadan karar vermek zor.",
+          "subheadline": "14 gün boyunca tüm özellikleri ücretsiz dene.",
           "primaryCta": {
-            "label": "Ücretsiz Dene",
+            "label": "Hemen Başla",
             "href": "/contact"
           },
           "secondaryCta": {
-            "label": "Demo İste",
+            "label": "Bize Ulaş",
             "href": "/contact"
           },
           "variant": "split-action"
@@ -399,18 +395,18 @@ export const content: ContentPlan = {
       "slug": "contact",
       "title": "İletişim",
       "metaTitle": "İletişim | Flowbase",
-      "metaDescription": "Flowbase ekibiyle iletişime geç. Demo talebi, sorular veya destek için bize ulaş — 24 saat içinde dönüş yapıyoruz.",
+      "metaDescription": "Flowbase ekibiyle iletişime geç. Sorularını yanıtlayalım, demo ayarlayalım veya ücretsiz deneme başlatalım.",
       "sections": [
         {
           "type": "hero",
-          "headline": "Konuşalım.",
-          "subheadline": "Demo, soru veya sadece merhaba — 24 saat içinde dönüş yapıyoruz.",
+          "headline": "Konuşalım",
+          "subheadline": "Soru, demo talebi veya geri bildirim — ekibimiz burada.",
           "variant": "centered"
         },
         {
           "type": "contact",
-          "headline": "Bize Ulaşın",
-          "email": "merhaba@flowbase.io",
+          "headline": "Bize Ulaş",
+          "email": "hello@flowbase.io",
           "formEnabled": true
         }
       ]
@@ -419,12 +415,12 @@ export const content: ContentPlan = {
       "slug": "blog",
       "title": "Blog",
       "metaTitle": "Blog | Flowbase",
-      "metaDescription": "Ekip yönetimi, iş akışı ve modern çalışma kültürü üzerine Flowbase'den içgörüler, rehberler ve güncellemeler.",
+      "metaDescription": "Ekip yönetimi, iş akışı ve üretkenlik üzerine Flowbase ekibinden içgörüler ve pratik rehberler.",
       "sections": [
         {
           "type": "hero",
-          "headline": "Ekip yönetiminde ne işe yarıyor?",
-          "subheadline": "Rehberler, ürün güncellemeleri ve modern çalışma kültürü üzerine içgörüler.",
+          "headline": "Ekip yönetimi üzerine düşünceler",
+          "subheadline": "İş akışı, iletişim ve üretkenlik hakkında kısa ve işe yarar yazılar.",
           "variant": "centered"
         },
         {
@@ -457,10 +453,10 @@ export const content: ContentPlan = {
         },
         {
           "type": "cta",
-          "headline": "Okurken de deneyebilirsin.",
-          "subheadline": "14 gün ücretsiz başla, ekibinle birlikte farkı gör.",
+          "headline": "Okudun, şimdi dene.",
+          "subheadline": "Flowbase'i 14 gün boyunca ücretsiz kullan.",
           "primaryCta": {
-            "label": "Ücretsiz Dene",
+            "label": "Ücretsiz Başla",
             "href": "/contact"
           },
           "secondaryCta": {

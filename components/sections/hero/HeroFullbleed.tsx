@@ -3,17 +3,48 @@ import type { HeroContent } from './types';
 
 // Fullbleed hero — koyu renk / gradient zemin, dramatik tipografi. Premium /
 // luxury / restoran / otel için. Metin ortada, zemin tam genişlik.
+// Sprint 18.5 G1 — content.image.type==='remote' ise görsel bg'ye konur,
+// üstüne brand palette overlay (lejibilite için %55-75 opacity). Credit
+// hover'da görünür (text'e karışmasın).
 export function HeroFullbleed({ content }: { content: HeroContent }) {
+  const img = content.image;
+  const hasRemoteImage = img?.type === 'remote';
+  const overlayGradient =
+    'linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover, var(--color-primary)) 55%, var(--color-accent) 100%)';
+  const bgLayer = hasRemoteImage
+    ? `linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.45)), ${overlayGradient}, url("${img.url}")`
+    : overlayGradient;
+
   return (
     <section
       className="relative w-full"
       style={{
         paddingBlock: 'var(--section-gap-y, 7rem)',
-        background:
-          'linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover, var(--color-primary)) 55%, var(--color-accent) 100%)',
+        background: bgLayer,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
         color: 'var(--color-bg, var(--color-background))',
       }}
     >
+      {hasRemoteImage && img.credit ? (
+        <div className="pointer-events-none absolute bottom-2 right-2 z-10 text-[10px] uppercase tracking-wider opacity-60">
+          <span className="bg-black/40 px-2 py-0.5 rounded">
+            <span className="opacity-80">Photo:</span>{' '}
+            {img.creditUrl ? (
+              <a
+                href={img.creditUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="pointer-events-auto hover:underline"
+              >
+                {img.credit}
+              </a>
+            ) : (
+              img.credit
+            )}
+          </span>
+        </div>
+      ) : null}
       <div className="container-custom">
         <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
           {content.eyebrow ? (

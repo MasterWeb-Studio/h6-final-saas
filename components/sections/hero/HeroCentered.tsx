@@ -1,8 +1,11 @@
 import Link from 'next/link';
 import type { HeroContent } from './types';
+import { SectionImageFrame } from '../_helpers/SectionImageFrame';
 
 // Eyes-in-center hero — başlık + metin + CTA ortada. Beauty / editorial / tek
 // mesaj odaklı siteler için. Metin bloğu max-w-3xl ile dar tutulur.
+// Sprint 18.5 G1 — content.image varsa CTA'nın altına max-w-4xl landscape
+// banner. Image yoksa graceful null (variant'ın minimalizm karakteri korunur).
 export function HeroCentered({ content }: { content: HeroContent }) {
   return (
     <section
@@ -78,6 +81,17 @@ export function HeroCentered({ content }: { content: HeroContent }) {
             </div>
           ) : null}
         </div>
+
+        {content.image ? (
+          <div className="mx-auto mt-14 max-w-4xl">
+            <SectionImageFrame
+              image={content.image}
+              aspect="aspect-[16/9]"
+              priority
+              showPlaceholderFallback={false}
+            />
+          </div>
+        ) : null}
       </div>
     </section>
   );
