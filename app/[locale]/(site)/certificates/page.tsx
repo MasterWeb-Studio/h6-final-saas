@@ -3,6 +3,8 @@ import { fetchCertificateList } from '@/lib/module-queries/certificates';
 import { getBreadcrumbs } from '@/lib/breadcrumb';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { CertificateGrid } from '@/components/sections/certificates/CertificateRenderer';
+import { JsonLdScript } from '@/components/JsonLdScript';
+import { buildCollectionPageJsonLd, buildBreadcrumbListJsonLd } from '@/lib/json-ld';
 
 export async function generateMetadata({
   params,
@@ -32,8 +34,19 @@ export default async function Page({
   const items = await fetchCertificateList(locale);
   const breadcrumbs = await getBreadcrumbs(`/${locale}/certificates`, locale);
 
+  const title = locale === 'tr' ? 'Sertifikalar' : 'Certificates';
+  const collection = buildCollectionPageJsonLd({
+    name: title,
+    url: `/${locale}/certificates`,
+    locale,
+    numberOfItems: items.length,
+  });
+  const breadcrumbLd = buildBreadcrumbListJsonLd(breadcrumbs);
+
   return (
     <main>
+      <JsonLdScript data={collection} />
+      <JsonLdScript data={breadcrumbLd} />
       <Breadcrumb items={breadcrumbs} locale={locale} />
       <section
         style={{

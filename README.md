@@ -1,8 +1,8 @@
-# Flowbase
+# Flowsync
 
-Ekibinin akışını hızlandır.
+Ekibinizin hızını artırın, işlerinizi senkronize edin.
 
-Flowbase, görev takibi ve takım iletişimini tek platformda birleştiren modern ekipler için B2B SaaS çözümü. 14 gün ücretsiz dene.
+Flowsync ile görev takibi, ekip iletişimi ve iş akışı yönetimini tek platformda birleştirin. 14 gün ücretsiz deneyin.
 
 ## Başlangıç
 
@@ -25,7 +25,7 @@ npm run start
 Proje içinde `/admin` panelinden dashboard ve içerik editörüne erişebilirsin.
 
 - **URL:** http://localhost:3000/admin/login
-- **Şifre:** `6052f044-f3c2-4688-a55e-eaaf7dbd6383`
+- **Şifre:** `44eacec0-fe16-4854-aaac-17f30f22c93b`
 
 Bu şifreyi güvenli yere kaydedin — kaybolursa `.env.local` dosyasındaki `ADMIN_PASSWORD` satırını değiştirip yeniden girebilirsiniz.
 

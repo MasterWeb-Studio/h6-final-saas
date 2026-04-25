@@ -54,7 +54,7 @@ export function AboutStatsSide({ content }: { content: AboutContent }) {
             <div className="relative">
               <SectionImageFrame
                 image={content.image}
-                aspect="aspect-[4/5]"
+                aspect="aspect-[5/4]"
                 showPlaceholderFallback={false}
               />
             </div>

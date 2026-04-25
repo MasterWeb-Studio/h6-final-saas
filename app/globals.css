@@ -20,11 +20,11 @@
  */
 :root {
   --color-primary: #6366F1;
-  --color-secondary: #1F2937;
-  --color-accent: #F59E0B;
-  --color-background: #FAFAFA;
-  --color-foreground: #111827;
-  --color-muted: #6B7280;
+  --color-secondary: #1E1B4B;
+  --color-accent: #F472B6;
+  --color-background: #FAFAFB;
+  --color-foreground: #0F172A;
+  --color-muted: #64748B;
   --color-border: #E5E7EB;
 
   --font-heading: Inter, system-ui, sans-serif;
@@ -32,7 +32,7 @@
   --font-heading-weight: 700;
   --font-body-weight: 400;
 
-  --radius: 0.5rem;
+  --radius: 1rem;
   --container-width: 1200px;
 }
 

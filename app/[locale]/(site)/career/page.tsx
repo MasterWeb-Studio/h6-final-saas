@@ -3,6 +3,8 @@ import { fetchCareerList } from '@/lib/module-queries/career';
 import { getBreadcrumbs } from '@/lib/breadcrumb';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { CareerGrid } from '@/components/sections/career/CareerRenderer';
+import { JsonLdScript } from '@/components/JsonLdScript';
+import { buildCollectionPageJsonLd, buildBreadcrumbListJsonLd } from '@/lib/json-ld';
 
 export async function generateMetadata({
   params,
@@ -29,8 +31,19 @@ export default async function Page({
   const items = await fetchCareerList(locale);
   const breadcrumbs = await getBreadcrumbs(`/${locale}/career`, locale);
 
+  const title = locale === 'tr' ? 'Kariyer' : 'Careers';
+  const collection = buildCollectionPageJsonLd({
+    name: title,
+    url: `/${locale}/career`,
+    locale,
+    numberOfItems: items.length,
+  });
+  const breadcrumbLd = buildBreadcrumbListJsonLd(breadcrumbs);
+
   return (
     <main>
+      <JsonLdScript data={collection} />
+      <JsonLdScript data={breadcrumbLd} />
       <Breadcrumb items={breadcrumbs} locale={locale} />
       <section
         style={{

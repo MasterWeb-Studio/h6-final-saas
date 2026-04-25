@@ -2,11 +2,11 @@
 export const designTokens = {
   "colors": {
     "primary": "#6366F1",
-    "secondary": "#1F2937",
-    "accent": "#F59E0B",
-    "background": "#FAFAFA",
-    "foreground": "#111827",
-    "muted": "#6B7280",
+    "secondary": "#1E1B4B",
+    "accent": "#F472B6",
+    "background": "#FAFAFB",
+    "foreground": "#0F172A",
+    "muted": "#64748B",
     "border": "#E5E7EB"
   },
   "typography": {
@@ -18,15 +18,15 @@ export const designTokens = {
   },
   "layout": {
     "style": "minimal",
-    "radius": "md",
-    "density": "normal",
+    "radius": "lg",
+    "density": "airy",
     "containerWidth": "normal"
   },
   "mood": [
     "modern",
     "innovative",
-    "approachable",
     "clean",
+    "approachable",
     "energetic"
   ]
 } as const;

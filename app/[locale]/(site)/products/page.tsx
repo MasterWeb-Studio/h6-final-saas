@@ -4,6 +4,8 @@ import { getBreadcrumbs } from '@/lib/breadcrumb';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { ProductGrid } from '@/components/sections/products/ProductRenderer';
 import { ProductFilters } from '@/components/sections/products/ProductFilters';
+import { JsonLdScript } from '@/components/JsonLdScript';
+import { buildCollectionPageJsonLd, buildBreadcrumbListJsonLd } from '@/lib/json-ld';
 
 export async function generateMetadata({
   params,
@@ -50,8 +52,20 @@ export default async function ProductsPage({
 
   const breadcrumbs = await getBreadcrumbs(`/${locale}/products`, locale);
 
+  // H7 Sprint 18 G3 — list JSON-LD (CollectionPage + BreadcrumbList).
+  const title = locale === 'tr' ? 'Ürünler' : 'Products';
+  const collection = buildCollectionPageJsonLd({
+    name: title,
+    url: `/${locale}/products`,
+    locale,
+    numberOfItems: total,
+  });
+  const breadcrumbLd = buildBreadcrumbListJsonLd(breadcrumbs);
+
   return (
     <main>
+      <JsonLdScript data={collection} />
+      <JsonLdScript data={breadcrumbLd} />
       <Breadcrumb items={breadcrumbs} locale={locale} />
       <section
         style={{

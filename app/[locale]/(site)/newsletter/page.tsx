@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import { NewsletterInline } from '@/components/sections/newsletter/NewsletterRenderer';
+import { JsonLdScript } from '@/components/JsonLdScript';
+import { buildCollectionPageJsonLd } from '@/lib/json-ld';
 
 // ─── Metadata ────────────────────────────────────────────────────────────────
 
@@ -37,8 +39,21 @@ export default async function NewsletterPage({
 }) {
   const { locale } = await params;
 
+  const title = locale === 'tr' ? 'Bülten' : 'Newsletter';
+  const description =
+    locale === 'tr'
+      ? 'E-posta bültenimize abone olun, güncel haberlerden ilk siz haberdar olun.'
+      : 'Subscribe to our email newsletter and be the first to hear the latest news.';
+  const collection = buildCollectionPageJsonLd({
+    name: title,
+    url: `/${locale}/newsletter`,
+    description,
+    locale,
+  });
+
   return (
     <main>
+      <JsonLdScript data={collection} />
       <section
         style={{
           background: 'var(--color-bg)',

@@ -2,7 +2,9 @@ import type { AboutContent } from './types';
 import { SectionImageFrame } from '../_helpers/SectionImageFrame';
 
 // Sol metin + sağ görsel alanı. Editorial/premium.
-// Sprint 18.5 G1 — content.image remote ise ImageWithCredit 4:5 aspect;
+// Sprint 19 — image aspect 4:5 → 5:4 (landscape) — split layout dengesinde
+// portrait yerine landscape görsel daha sakin ve visual hierarchy'yi metni baskılamadan
+// dengeliyor; kullanıcı geri bildirimi.
 // image yok veya placeholder ise brand gradient fallback (variant identity
 // preserve edilir — sağ kolon hiçbir zaman boş kalmaz).
 export function AboutWithImage({ content }: { content: AboutContent }) {
@@ -50,7 +52,7 @@ export function AboutWithImage({ content }: { content: AboutContent }) {
           <div className="relative order-first lg:order-last">
             <SectionImageFrame
               image={content.image}
-              aspect="aspect-[4/5]"
+              aspect="aspect-[5/4]"
               fallbackGradient="linear-gradient(160deg, var(--color-secondary) 0%, var(--color-primary) 55%, var(--color-accent) 100%)"
             />
           </div>

@@ -3,6 +3,8 @@ import { fetchVideoList } from '@/lib/module-queries/video';
 import { getBreadcrumbs } from '@/lib/breadcrumb';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { VideoGrid } from '@/components/sections/video/VideoRenderer';
+import { JsonLdScript } from '@/components/JsonLdScript';
+import { buildCollectionPageJsonLd, buildBreadcrumbListJsonLd } from '@/lib/json-ld';
 
 export async function generateMetadata({
   params,
@@ -29,8 +31,19 @@ export default async function VideoListPage({
   const items = await fetchVideoList(locale);
   const breadcrumbs = await getBreadcrumbs(`/${locale}/video`, locale);
 
+  const title = locale === 'tr' ? 'Video' : 'Video';
+  const collection = buildCollectionPageJsonLd({
+    name: title,
+    url: `/${locale}/video`,
+    locale,
+    numberOfItems: items.length,
+  });
+  const breadcrumbLd = buildBreadcrumbListJsonLd(breadcrumbs);
+
   return (
     <main>
+      <JsonLdScript data={collection} />
+      <JsonLdScript data={breadcrumbLd} />
       <Breadcrumb items={breadcrumbs} locale={locale} />
       <section
         style={{

@@ -3,6 +3,8 @@ import { fetchTeamList } from '@/lib/module-queries/team';
 import { getBreadcrumbs } from '@/lib/breadcrumb';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { TeamGrid } from '@/components/sections/team/TeamRenderer';
+import { JsonLdScript } from '@/components/JsonLdScript';
+import { buildCollectionPageJsonLd, buildBreadcrumbListJsonLd } from '@/lib/json-ld';
 
 export async function generateMetadata({
   params,
@@ -29,8 +31,19 @@ export default async function Page({
   const items = await fetchTeamList(locale);
   const breadcrumbs = await getBreadcrumbs(`/${locale}/team`, locale);
 
+  const title = locale === 'tr' ? 'Ekip' : 'Team';
+  const collection = buildCollectionPageJsonLd({
+    name: title,
+    url: `/${locale}/team`,
+    locale,
+    numberOfItems: items.length,
+  });
+  const breadcrumbLd = buildBreadcrumbListJsonLd(breadcrumbs);
+
   return (
     <main>
+      <JsonLdScript data={collection} />
+      <JsonLdScript data={breadcrumbLd} />
       <Breadcrumb items={breadcrumbs} locale={locale} />
       <section
         style={{

@@ -3,6 +3,8 @@ import { fetchProjectsList } from '@/lib/module-queries/projects';
 import { getBreadcrumbs } from '@/lib/breadcrumb';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { ProjectsGrid } from '@/components/sections/projects/ProjectsRenderer';
+import { JsonLdScript } from '@/components/JsonLdScript';
+import { buildCollectionPageJsonLd, buildBreadcrumbListJsonLd } from '@/lib/json-ld';
 
 export async function generateMetadata({
   params,
@@ -33,8 +35,19 @@ export default async function ProjectsListPage({
   const items = await fetchProjectsList(locale);
   const breadcrumbs = await getBreadcrumbs(`/${locale}/projects`, locale);
 
+  const title = locale === 'tr' ? 'Projeler' : 'Projects';
+  const collection = buildCollectionPageJsonLd({
+    name: title,
+    url: `/${locale}/projects`,
+    locale,
+    numberOfItems: items.length,
+  });
+  const breadcrumbLd = buildBreadcrumbListJsonLd(breadcrumbs);
+
   return (
     <main>
+      <JsonLdScript data={collection} />
+      <JsonLdScript data={breadcrumbLd} />
       <Breadcrumb items={breadcrumbs} locale={locale} />
       <section
         style={{

@@ -3,6 +3,8 @@ import { fetchReferencesList } from '@/lib/module-queries/references';
 import { getBreadcrumbs } from '@/lib/breadcrumb';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { ReferencesGrid } from '@/components/sections/references/ReferencesRenderer';
+import { JsonLdScript } from '@/components/JsonLdScript';
+import { buildCollectionPageJsonLd, buildBreadcrumbListJsonLd } from '@/lib/json-ld';
 
 export async function generateMetadata({
   params,
@@ -38,8 +40,19 @@ export default async function ReferencesPage({
   const items = await fetchReferencesList(locale);
   const breadcrumbs = await getBreadcrumbs(`/${locale}/references`, locale);
 
+  const title = locale === 'tr' ? 'Referanslar' : 'References';
+  const collection = buildCollectionPageJsonLd({
+    name: title,
+    url: `/${locale}/references`,
+    locale,
+    numberOfItems: items.length,
+  });
+  const breadcrumbLd = buildBreadcrumbListJsonLd(breadcrumbs);
+
   return (
     <main>
+      <JsonLdScript data={collection} />
+      <JsonLdScript data={breadcrumbLd} />
       <Breadcrumb items={breadcrumbs} locale={locale} />
       <section
         style={{

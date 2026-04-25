@@ -4,6 +4,8 @@ import { getBreadcrumbs } from '@/lib/breadcrumb';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { NewsGrid } from '@/components/sections/news/NewsRenderer';
 import { NewsCategoryFilter } from '@/components/sections/news/NewsCategoryFilter';
+import { JsonLdScript } from '@/components/JsonLdScript';
+import { buildCollectionPageJsonLd, buildBreadcrumbListJsonLd } from '@/lib/json-ld';
 
 export async function generateMetadata({
   params,
@@ -40,8 +42,19 @@ export default async function NewsListPage({
     getBreadcrumbs(`/${locale}/news`, locale),
   ]);
 
+  const title = locale === 'tr' ? 'Haberler' : 'News';
+  const collection = buildCollectionPageJsonLd({
+    name: title,
+    url: `/${locale}/news`,
+    locale,
+    numberOfItems: items.total ?? items.data.length,
+  });
+  const breadcrumbLd = buildBreadcrumbListJsonLd(breadcrumbs);
+
   return (
     <main>
+      <JsonLdScript data={collection} />
+      <JsonLdScript data={breadcrumbLd} />
       <Breadcrumb items={breadcrumbs} locale={locale} />
       <section
         style={{

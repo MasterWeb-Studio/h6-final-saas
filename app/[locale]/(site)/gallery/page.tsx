@@ -3,6 +3,8 @@ import { fetchGalleryList } from '@/lib/module-queries/gallery';
 import { getBreadcrumbs } from '@/lib/breadcrumb';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { GalleryGrid } from '@/components/sections/gallery/GalleryRenderer';
+import { JsonLdScript } from '@/components/JsonLdScript';
+import { buildCollectionPageJsonLd, buildBreadcrumbListJsonLd } from '@/lib/json-ld';
 
 export async function generateMetadata({
   params,
@@ -29,8 +31,19 @@ export default async function GalleryListPage({
   const items = await fetchGalleryList(locale);
   const breadcrumbs = await getBreadcrumbs(`/${locale}/gallery`, locale);
 
+  const title = locale === 'tr' ? 'Galeri' : 'Gallery';
+  const collection = buildCollectionPageJsonLd({
+    name: title,
+    url: `/${locale}/gallery`,
+    locale,
+    numberOfItems: items.length,
+  });
+  const breadcrumbLd = buildBreadcrumbListJsonLd(breadcrumbs);
+
   return (
     <main>
+      <JsonLdScript data={collection} />
+      <JsonLdScript data={breadcrumbLd} />
       <Breadcrumb items={breadcrumbs} locale={locale} />
       <section
         style={{

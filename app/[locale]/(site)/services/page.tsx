@@ -3,6 +3,8 @@ import { fetchServicesList } from '@/lib/module-queries/services';
 import { getBreadcrumbs } from '@/lib/breadcrumb';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { ServicesGrid } from '@/components/sections/services/ServicesModuleRenderer';
+import { JsonLdScript } from '@/components/JsonLdScript';
+import { buildCollectionPageJsonLd, buildBreadcrumbListJsonLd } from '@/lib/json-ld';
 
 export async function generateMetadata({
   params,
@@ -29,8 +31,19 @@ export default async function Page({
   const items = await fetchServicesList(locale);
   const breadcrumbs = await getBreadcrumbs(`/${locale}/services`, locale);
 
+  const title = locale === 'tr' ? 'Hizmetler' : 'Services';
+  const collection = buildCollectionPageJsonLd({
+    name: title,
+    url: `/${locale}/services`,
+    locale,
+    numberOfItems: items.length,
+  });
+  const breadcrumbLd = buildBreadcrumbListJsonLd(breadcrumbs);
+
   return (
     <main>
+      <JsonLdScript data={collection} />
+      <JsonLdScript data={breadcrumbLd} />
       <Breadcrumb items={breadcrumbs} locale={locale} />
       <section
         style={{
