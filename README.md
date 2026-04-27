@@ -1,8 +1,8 @@
-# Flowsync
+# Nexus
 
-Ekibinizin hızını artırın, işlerinizi senkronize edin.
+Ekibinizin iş akışını tek platformda toplayın
 
-Flowsync ile görev takibi, ekip iletişimi ve iş akışı yönetimini tek platformda birleştirin. 14 gün ücretsiz deneyin.
+Nexus ile görev takibi, ekip iletişimi ve iş yönetimini tek platformda birleştirin. 14 gün ücretsiz deneyin.
 
 ## Başlangıç
 
@@ -25,7 +25,7 @@ npm run start
 Proje içinde `/admin` panelinden dashboard ve içerik editörüne erişebilirsin.
 
 - **URL:** http://localhost:3000/admin/login
-- **Şifre:** `44eacec0-fe16-4854-aaac-17f30f22c93b`
+- **Şifre:** `298fe5ee-2dec-41ce-889d-ec1e541fe4f3`
 
 Bu şifreyi güvenli yere kaydedin — kaybolursa `.env.local` dosyasındaki `ADMIN_PASSWORD` satırını değiştirip yeniden girebilirsiniz.
 

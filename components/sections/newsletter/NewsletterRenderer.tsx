@@ -118,6 +118,7 @@ export function NewsletterInline({ locale, config }: NewsletterFormProps) {
             className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center"
           >
             <input
+              aria-label="E-posta adresi"
               type="email"
               required
               value={email}
@@ -232,6 +233,7 @@ export function NewsletterCard({ locale, config }: NewsletterFormProps) {
           ) : (
             <form onSubmit={handleSubmit} className="mt-6 space-y-3">
               <input
+                aria-label="E-posta adresi"
                 type="email"
                 required
                 value={email}
@@ -319,6 +321,7 @@ export function NewsletterFooter({ locale, config }: NewsletterFormProps) {
       ) : (
         <form onSubmit={handleSubmit} className="flex gap-2">
           <input
+            aria-label="E-posta adresi"
             type="email"
             required
             value={email}

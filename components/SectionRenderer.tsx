@@ -13,6 +13,7 @@ import { Team } from './sections/Team';
 import { Projects } from './sections/Projects';
 import { Products } from './sections/Products';
 import { Blog } from './sections/Blog';
+import { ModuleHomeRenderer } from './sections/ModuleHomeRenderer';
 import { FadeIn, ScrollReveal } from '@/lib/motion';
 
 // H6 Sprint 14 — Section animasyon sarmalayıcısı.
@@ -28,7 +29,16 @@ function wrapWithAnimation(type: Section['type'], child: React.ReactElement) {
   return <ScrollReveal speed="base">{child}</ScrollReveal>;
 }
 
-export function SectionRenderer({ section }: { section: Section }) {
+// Sprint 23 G2 — async server component (module-home async DB fetch için).
+// React handles async server components transparently; legacy sync caller'lar
+// `await` etmiyor olsa bile JSX üzerinden render eder.
+export async function SectionRenderer({
+  section,
+  locale,
+}: {
+  section: Section;
+  locale?: string;
+}) {
   let content: React.ReactElement | null = null;
   switch (section.type) {
     case 'hero':
@@ -72,6 +82,10 @@ export function SectionRenderer({ section }: { section: Section }) {
       break;
     case 'blog':
       content = <Blog data={section} />;
+      break;
+    case 'module-home':
+      content = await ModuleHomeRenderer({ section, locale: locale ?? 'tr' });
+      if (!content) return null;
       break;
     default: {
       const _exhaustive: never = section;

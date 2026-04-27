@@ -1,9 +1,14 @@
 import Link from 'next/link';
+import { ImageWithCredit } from '../../ImageWithCredit';
 import type { CtaContent } from './types';
 
 // Default — koyu geniş banner blok, merkezli başlık + CTA. Eski Cta.tsx'in
 // preset-native hâli. Güçlü eylem çağrısı, varsayılan varyant.
+// Sprint 22.5: content.image='remote' ise CTA banner background image olarak
+// render edilir (HeroFullbleed pattern: cover + dark overlay + foreground
+// metni cream rengi). image yoksa eski "color-text" solid arka plan korunur.
 export function CtaBanner({ content }: { content: CtaContent }) {
+  const hasBgImage = content.image?.type === 'remote';
   return (
     <section
       className="relative"
@@ -14,13 +19,36 @@ export function CtaBanner({ content }: { content: CtaContent }) {
     >
       <div className="container-custom">
         <div
-          className="flex flex-col items-center gap-6 px-8 py-16 text-center md:px-16 md:py-20"
+          className="relative flex flex-col items-center gap-6 overflow-hidden px-8 py-16 text-center md:px-16 md:py-20"
           style={{
-            background: 'var(--color-text, var(--color-foreground))',
+            background: hasBgImage
+              ? 'transparent'
+              : 'var(--color-text, var(--color-foreground))',
             color: 'var(--color-bg, var(--color-background))',
             borderRadius: 'var(--radius-card, var(--radius))',
           }}
         >
+          {hasBgImage && content.image && content.image.type === 'remote' ? (
+            <>
+              <div className="absolute inset-0 -z-10 overflow-hidden">
+                <ImageWithCredit
+                  src={content.image.url}
+                  alt={content.image.alt}
+                  credit={content.image.credit}
+                  creditUrl={content.image.creditUrl}
+                  color={content.image.color}
+                  display="hover"
+                  className="block h-full w-full"
+                  imgClassName="h-full w-full object-cover"
+                />
+              </div>
+              <div
+                className="absolute inset-0 -z-10"
+                style={{ background: 'rgba(15, 15, 15, 0.55)' }}
+                aria-hidden
+              />
+            </>
+          ) : null}
           <h2
             className="max-w-2xl text-3xl tracking-tight md:text-4xl"
             style={{

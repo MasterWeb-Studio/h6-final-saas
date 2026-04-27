@@ -1,8 +1,11 @@
 import type { FeatureGridContent } from './types';
 import { renderLucideIcon } from './icon';
+import { SectionImageFrame } from '../_helpers/SectionImageFrame';
 
 // 2 sütun geniş kart. Her kart nefes alan pad'e ve border'a sahip; daha fazla
 // metin taşır. Premium / editorial / detay vurgulu içerik için.
+// Sprint 22.5 borç temizliği: item.image='remote' ise ikon yerine 16:9 banner
+// görsel render edilir; image yoksa ikon gösterilir (eski davranış).
 export function FeatureGrid2Col({ content }: { content: FeatureGridContent }) {
   return (
     <section
@@ -45,18 +48,29 @@ export function FeatureGrid2Col({ content }: { content: FeatureGridContent }) {
         <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
           {content.items.map((item, index) => {
             const iconEl = renderLucideIcon(item.icon, { className: 'h-7 w-7' });
+            const hasImage = item.image?.type === 'remote';
             return (
               <div
                 key={index}
-                className="flex flex-col border"
+                className="flex flex-col overflow-hidden border"
                 style={{
                   borderColor: 'var(--color-border)',
                   borderRadius: 'var(--radius-card, var(--radius))',
-                  padding: 'var(--card-padding, 2rem)',
                   background: 'var(--color-surface, var(--color-bg, var(--color-background)))',
                 }}
               >
-                {iconEl ? (
+                {hasImage ? (
+                  <SectionImageFrame
+                    image={item.image}
+                    aspect="aspect-[16/9]"
+                    showPlaceholderFallback={false}
+                  />
+                ) : null}
+                <div
+                  className="flex flex-col"
+                  style={{ padding: 'var(--card-padding, 2rem)' }}
+                >
+                {iconEl && !hasImage ? (
                   <div
                     className="mb-6 inline-flex h-14 w-14 items-center justify-center"
                     style={{
@@ -83,6 +97,7 @@ export function FeatureGrid2Col({ content }: { content: FeatureGridContent }) {
                 >
                   {item.description}
                 </p>
+                </div>
               </div>
             );
           })}

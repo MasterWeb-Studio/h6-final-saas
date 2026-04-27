@@ -1,8 +1,10 @@
 import type { FeatureGridContent } from './types';
 import { renderLucideIcon } from './icon';
+import { SectionImageFrame } from '../_helpers/SectionImageFrame';
 
 // Büyük ikon üstte merkez, başlık + açıklama altta. Playful SaaS,
 // beauty / wellness, canlı vibeli tek-mesaj kartlar. items ≥4 ise 4 sütun.
+// Sprint 22.5: item.image='remote' ise ikon yerine küçük 4:3 görsel (max-w-32).
 export function FeatureGridIconTop({ content }: { content: FeatureGridContent }) {
   const cols =
     content.items.length >= 4 ? 'md:grid-cols-2 lg:grid-cols-4' : 'md:grid-cols-3';
@@ -51,9 +53,18 @@ export function FeatureGridIconTop({ content }: { content: FeatureGridContent })
               className: 'h-8 w-8',
               strokeWidth: 1.75,
             });
+            const hasImage = item.image?.type === 'remote';
             return (
               <div key={index} className="flex flex-col items-center text-center">
-                {iconEl ? (
+                {hasImage ? (
+                  <div className="mb-6 w-32">
+                    <SectionImageFrame
+                      image={item.image}
+                      aspect="aspect-[4/3]"
+                      showPlaceholderFallback={false}
+                    />
+                  </div>
+                ) : iconEl ? (
                   <div
                     className="mb-6 inline-flex h-16 w-16 items-center justify-center"
                     style={{

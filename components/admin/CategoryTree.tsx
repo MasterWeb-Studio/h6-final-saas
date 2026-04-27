@@ -417,6 +417,7 @@ function CategoryNode(props: NodeProps) {
 
         {isEditing ? (
           <input
+            aria-label="Kategori adı"
             autoFocus
             value={draftName}
             onChange={(e) => setDraftName(e.target.value)}
@@ -556,6 +557,7 @@ function NewInline({
   return (
     <div className="flex items-center gap-2 rounded-md border border-blue-200 bg-blue-50/50 px-2 py-1.5">
       <input
+        aria-label="Yeni kategori adı"
         ref={ref}
         value={name}
         onChange={(e) => setName(e.target.value)}

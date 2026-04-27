@@ -104,6 +104,7 @@ export function ProductFilters({ locale }: ProductFiltersProps) {
         </p>
         <div className="flex items-center gap-2">
           <input
+            aria-label={locale === 'tr' ? 'Minimum fiyat' : 'Minimum price'}
             type="number"
             min={0}
             placeholder={locale === 'tr' ? 'Min' : 'Min'}
@@ -120,6 +121,7 @@ export function ProductFilters({ locale }: ProductFiltersProps) {
           />
           <span style={{ color: 'var(--color-text-muted)' }}>—</span>
           <input
+            aria-label={locale === 'tr' ? 'Maksimum fiyat' : 'Maximum price'}
             type="number"
             min={0}
             placeholder={locale === 'tr' ? 'Max' : 'Max'}

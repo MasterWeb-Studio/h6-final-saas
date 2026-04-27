@@ -1,8 +1,10 @@
 import { Check } from 'lucide-react';
 import type { ServicesContent } from './types';
+import { SectionImageFrame } from '../_helpers/SectionImageFrame';
 
 // Default — kart grid (2 veya 3 sütun). Eski Services.tsx'in preset-native
 // hâli. Border + surface arkaplan + bullets listesi.
+// Sprint 22.5: item.image='remote' ise kart üstünde 16:9 banner görsel.
 export function ServicesCards({ content }: { content: ServicesContent }) {
   const cols =
     content.items.length >= 3 ? 'md:grid-cols-2 lg:grid-cols-3' : 'md:grid-cols-2';
@@ -52,15 +54,25 @@ export function ServicesCards({ content }: { content: ServicesContent }) {
             borderRadius: 'var(--radius-card, var(--radius))',
           }}
         >
-          {content.items.map((item, index) => (
+          {content.items.map((item, index) => {
+            const hasImage = item.image?.type === 'remote';
+            return (
             <div
               key={index}
-              className="flex flex-col p-8"
+              className="flex flex-col"
               style={{
                 background:
                   'var(--color-surface, var(--color-bg, var(--color-background)))',
               }}
             >
+              {hasImage ? (
+                <SectionImageFrame
+                  image={item.image}
+                  aspect="aspect-[16/9]"
+                  showPlaceholderFallback={false}
+                />
+              ) : null}
+              <div className="flex flex-col p-8">
               <h3
                 className="text-xl font-medium"
                 style={{ fontFamily: 'var(--font-display, var(--font-heading))' }}
@@ -91,8 +103,10 @@ export function ServicesCards({ content }: { content: ServicesContent }) {
                   ))}
                 </ul>
               ) : null}
+              </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

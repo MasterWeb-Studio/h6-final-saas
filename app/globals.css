@@ -20,16 +20,16 @@
  */
 :root {
   --color-primary: #6366F1;
-  --color-secondary: #1E1B4B;
+  --color-secondary: #0F172A;
   --color-accent: #F472B6;
-  --color-background: #FAFAFB;
+  --color-background: #FAFAFA;
   --color-foreground: #0F172A;
   --color-muted: #64748B;
-  --color-border: #E5E7EB;
+  --color-border: #E2E8F0;
 
   --font-heading: Inter, system-ui, sans-serif;
   --font-body: Inter, system-ui, sans-serif;
-  --font-heading-weight: 700;
+  --font-heading-weight: 600;
   --font-body-weight: 400;
 
   --radius: 1rem;

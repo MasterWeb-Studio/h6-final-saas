@@ -25,7 +25,17 @@ export async function generateMetadata({
   const { slug } = await params;
   const content = await getContent();
   const page = content.pages.find((p) => p.slug === slug);
-  return page ? { title: page.metaTitle, description: page.metaDescription } : {};
+  if (!page) return {};
+  const locale = content.meta.language ?? 'tr';
+  // Sprint 22.5: layout template bypass + canonical + hreflang.
+  return {
+    title: { absolute: page.metaTitle },
+    description: page.metaDescription,
+    alternates: {
+      canonical: `/${slug}`,
+      languages: { [locale]: `/${slug}` },
+    },
+  };
 }
 
 export default async function DynamicPage({

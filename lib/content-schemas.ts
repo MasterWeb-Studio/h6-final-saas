@@ -208,6 +208,23 @@ export const BlogSectionSchema = z.object({
 // Section union, Page, SiteMeta, ContentPlan
 // ===========================================================================
 
+// Sprint 23 G2 — module-home section (H6 modülleri home entegrasyonu)
+export const ModuleHomeSectionSchema = z.object({
+  type: z.literal('module-home'),
+  module: z.enum([
+    'products', 'services', 'team', 'gallery', 'references', 'certificates',
+    'news', 'career', 'counter', 'newsletter', 'video', 'timeline',
+    'contact-cards', 'projects',
+  ]),
+  variant: z.string(),
+  headline: z.string().optional(),
+  description: z.string().optional(),
+  count: z.number().int().positive().max(12).optional(),
+  selectionLogic: z
+    .enum(['latest', 'featured', 'random', 'manual', 'bestsellers'])
+    .optional(),
+});
+
 export const SectionSchema = z.discriminatedUnion('type', [
   HeroSectionSchema,
   FeatureGridSchema,
@@ -216,6 +233,7 @@ export const SectionSchema = z.discriminatedUnion('type', [
   CtaSectionSchema,
   ContactSectionSchema,
   AppointmentSectionSchema,
+  ModuleHomeSectionSchema,
   TestimonialsSectionSchema,
   FaqSectionSchema,
   StatsSectionSchema,

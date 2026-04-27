@@ -1,12 +1,12 @@
 import type { ContentPlan } from './content-types';
 
 // Bu dosya frontend-builder tarafından güncellendi (polish sonrası).
-// Son güncelleme: 2026-04-25T15:05:09.357Z
+// Son güncelleme: 2026-04-27T14:21:18.334Z
 export const content: ContentPlan = {
   "meta": {
-    "companyName": "Flowsync",
-    "tagline": "Ekibinizin hızını artırın, işlerinizi senkronize edin.",
-    "description": "Flowsync ile görev takibi, ekip iletişimi ve iş akışı yönetimini tek platformda birleştirin. 14 gün ücretsiz deneyin.",
+    "companyName": "Nexus",
+    "tagline": "Ekibinizin iş akışını tek platformda toplayın",
+    "description": "Nexus ile görev takibi, ekip iletişimi ve iş yönetimini tek platformda birleştirin. 14 gün ücretsiz deneyin.",
     "language": "tr",
     "navigation": [
       {
@@ -22,8 +22,8 @@ export const content: ContentPlan = {
         "href": "/services"
       },
       {
-        "label": "Blog",
-        "href": "/blog"
+        "label": "Fiyatlandırma",
+        "href": "/pricing"
       },
       {
         "label": "İletişim",
@@ -31,21 +31,8 @@ export const content: ContentPlan = {
       }
     ],
     "footer": {
-      "about": "Flowsync, startup ve scale-up ekiplerinin görev, iletişim ve iş akışlarını tek platformda yönetmesini sağlar.",
+      "about": "Nexus, dağınık iş süreçlerini tek akıcı platformda toplayan modern B2B SaaS çözümüdür. Ekipler daha hızlı düşünür, planlar ve üretir.",
       "columns": [
-        {
-          "title": "Ürün",
-          "links": [
-            {
-              "label": "Özellikler",
-              "href": "/services"
-            },
-            {
-              "label": "Blog",
-              "href": "/blog"
-            }
-          ]
-        },
         {
           "title": "Şirket",
           "links": [
@@ -56,6 +43,19 @@ export const content: ContentPlan = {
             {
               "label": "İletişim",
               "href": "/contact"
+            }
+          ]
+        },
+        {
+          "title": "Ürün",
+          "links": [
+            {
+              "label": "Özellikler",
+              "href": "/services"
+            },
+            {
+              "label": "Fiyatlandırma",
+              "href": "/pricing"
             }
           ]
         },
@@ -77,15 +77,15 @@ export const content: ContentPlan = {
           ]
         }
       ],
-      "copyright": "© 2026 Flowsync. Tüm hakları saklıdır.",
+      "copyright": "© 2026 Nexus. Tüm hakları saklıdır.",
       "social": [
         {
           "platform": "linkedin",
-          "url": "https://linkedin.com/company/flowsync"
+          "url": "https://linkedin.com/company/nexus"
         },
         {
           "platform": "twitter",
-          "url": "https://twitter.com/flowsync"
+          "url": "https://twitter.com/nexusapp"
         }
       ]
     }
@@ -94,73 +94,68 @@ export const content: ContentPlan = {
     {
       "slug": "home",
       "title": "Ana Sayfa",
-      "metaTitle": "Flowsync — Ekip İş Yönetimi Platformu",
-      "metaDescription": "Görev takibi, ekip iletişimi ve iş akışı yönetimi tek platformda. 14 gün ücretsiz deneyin, kredi kartı gerekmez.",
+      "metaTitle": "İş Yönetimi ve Ekip İletişimi — Tek Platform",
+      "metaDescription": "Nexus ile görev takibi, ekip iletişimi ve iş yönetimini tek platformda birleştirin. 14 gün ücretsiz deneyin.",
       "sections": [
         {
           "type": "hero",
-          "headline": "Ekibiniz daha az uğraşsın, daha çok üretsin.",
-          "subheadline": "Görevler, mesajlar ve hedefler tek platformda — kurulum yok, karmaşıklık yok.",
+          "headline": "Ekibiniz her gün biraz daha hızlı çalışır",
+          "subheadline": "Görev takibi, iletişim ve iş akışları tek yerde. Kurulum yok, öğrenme eğrisi yok — sadece iş.",
           "primaryCta": {
-            "label": "14 Gün Ücretsiz Dene",
+            "label": "14 Gün Ücretsiz Başla",
             "href": "/contact"
           },
           "secondaryCta": {
-            "label": "Nasıl Çalışır?",
+            "label": "Özellikleri Keşfet",
             "href": "/services"
           },
           "variant": "centered",
           "image": {
             "type": "remote",
-            "url": "https://images.unsplash.com/photo-1556761175-b413da4baf72?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MzA1NTV8MHwxfHNlYXJjaHw4fHxtb2Rlcm4lMjB0ZWFtJTIwY29sbGFib3JhdGlvbiUyMGRhc2hib2FyZCUyMHdvcmtzcGFjZXxlbnwxfDB8fHwxNzc3MTI5NTAwfDA&ixlib=rb-4.1.0&q=80&w=1080",
-            "alt": "three men sitting on chair beside tables",
-            "credit": "Austin Distel / unsplash",
-            "creditUrl": "https://unsplash.com/@austindistel",
-            "color": "#c0a6a6",
-            "width": 5300,
-            "height": 3975
+            "url": "https://images.pexels.com/photos/5716007/pexels-photo-5716007.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+            "alt": "Modern team collaboration in office with laptops and tablets focusing on charts and communication.",
+            "credit": "Artem Podrez / pexels",
+            "creditUrl": "https://www.pexels.com/@artempodrez",
+            "color": "#8E847F",
+            "width": 6144,
+            "height": 3456
           }
         },
         {
           "type": "feature-grid",
-          "headline": "Neden Flowsync?",
+          "headline": "Neden Nexus?",
           "items": [
             {
               "icon": "CheckCircle",
-              "title": "Görev Takibi, Basit",
-              "description": "Karmaşık araçlara gerek yok. Görevleri oluşturun, atayın ve tamamlanana kadar takip edin."
+              "title": "Görevleri Takip Edin",
+              "description": "Kimin ne yaptığını anlık görün. Öncelikleri belirleyin, teslim tarihlerini kaçırmayın."
             },
             {
               "icon": "MessageSquare",
-              "title": "İletişim Tek Yerde",
-              "description": "Dağınık e-postalar yerine görev bazlı yorumlar ve anlık bildirimlerle ekibinizle senkronize kalın."
+              "title": "Ekiple İletişim Kurun",
+              "description": "Dağınık e-postalar yerine bağlama dayalı mesajlaşma — doğru konuşma, doğru yerde."
             },
             {
               "icon": "Zap",
-              "title": "Otomasyonla Zaman Kazanın",
-              "description": "Tekrarlayan iş adımlarını otomatikleştirin; ekibiniz asıl işe odaklanır."
+              "title": "İş Akışını Hızlandırın",
+              "description": "Tekrarlayan süreçleri otomatikleştirin, ekibinizin enerjisini asıl işe yönlendirin."
+            },
+            {
+              "icon": "Layers",
+              "title": "Her Şey Bir Arada",
+              "description": "Proje yönetimi, görev listesi ve ekip takvimi — tek ekranda, dağınıklık yok."
             }
           ],
           "variant": "three-col"
         },
         {
           "type": "about",
-          "headline": "Startup Hızında Çalışmak İçin",
+          "headline": "Neden Nexus'u Bulduk",
           "body": [
-            "Flowsync, 10 ile 200 kişi arasındaki ekiplerin proje ve iletişim karmaşasını çözmek için tasarlandı. Sade arayüzü sayesinde ekibiniz ilk günden itibaren verimli çalışmaya başlar.",
-            "Ürün, operasyon ve proje yöneticileri için geliştirilmiş iş akışları; kurulum gerektirmeden çalışır."
+            "Hızlı büyüyen ekipler farklı araçlar arasında kaybolur — bir yerde görev, başka yerde mesaj, başka yerde takvim. Nexus bu dağınıklığı ortadan kaldırmak için tasarlandı.",
+            "Startup ve KOBİ ekiplerine odaklanıyoruz: kurulum karmaşası yok, öğrenme eğrisi minimal, fayda anında hissedilir."
           ],
-          "variant": "with-image",
-          "image": {
-            "type": "remote",
-            "url": "https://images.pexels.com/photos/7213187/pexels-photo-7213187.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-            "alt": "Group of young professionals having a team meeting around a laptop in a modern startup office.",
-            "credit": "Ivan S / pexels",
-            "creditUrl": "https://www.pexels.com/@ivan-s",
-            "color": "#7F7A78",
-            "width": 6720,
-            "height": 4480
-          }
+          "variant": "text-only"
         },
         {
           "type": "stats",
@@ -189,62 +184,22 @@ export const content: ContentPlan = {
           ]
         },
         {
-          "type": "services",
-          "headline": "Temel Özellikler",
-          "items": [
-            {
-              "title": "Proje Yönetimi",
-              "description": "Kanban, liste veya takvim görünümüyle projelerinizi yönetin. Görev atayın, son tarihleri belirleyin, bağımlılıkları takip edin."
-            },
-            {
-              "title": "Ekip İletişimi",
-              "description": "Görev yorumları ve @mention ile konuşmalar her zaman bağlamında kalır. E-posta zincirleri tarihe karışır."
-            },
-            {
-              "title": "İlerleme Takibi",
-              "description": "Hangi görevin nerede takıldığını anında görün. Ekip yükünü tek panelden izleyin."
-            },
-            {
-              "title": "İş Akışı Otomasyonu",
-              "description": "Tekrarlayan adımları kurallara bağlayın. Onay süreçleri ve hatırlatmalar otomatik çalışır."
-            }
-          ],
-          "variant": "cards"
-        },
-        {
-          "type": "testimonials",
-          "headline": "Müşterilerimiz ne diyor",
-          "items": [
-            {
-              "quote": "Entegrasyonu bir öğleden sonrada bitirdik; ertesi sabah ekip bize dönüp \"niye önceden kullanmıyorduk\" diye sordu.",
-              "author": "Ceren B.",
-              "role": "Büyüme lideri, orta ölçekli SaaS",
-              "_isPlaceholder": true
-            },
-            {
-              "quote": "Destek ekibi sadece soruyu cevaplamıyor, kullanımımızı iyileştirecek önerilerle geri dönüyor. Fark burada başlıyor.",
-              "author": "Ege Ö.",
-              "role": "Ürün yöneticisi",
-              "_isPlaceholder": true
-            },
-            {
-              "quote": "Veri tarafı şeffaf ve dışa aktarılabilir. Yıllardır lock-in endişesiyle baktığımız kategoride ilk rahat hissettiğimiz araç.",
-              "author": "Serkan T.",
-              "role": "CTO, fintech scale-up",
-              "_isPlaceholder": true
-            }
-          ]
+          "type": "module-home",
+          "module": "newsletter",
+          "variant": "newsletter-card",
+          "headline": "Ürün güncellemelerini ilk siz öğrenin",
+          "description": "Ayda bir, yalnızca önemli değişiklikler. Gereksiz e-posta yok."
         },
         {
           "type": "cta",
-          "headline": "Ekibiniz bugün daha hızlı çalışabilir.",
-          "subheadline": "14 gün boyunca tüm özellikleri ücretsiz deneyin. Kredi kartı gerekmez.",
+          "headline": "Ekibiniz hazır, platform da öyle",
+          "subheadline": "14 gün ücretsiz kullanın — kurulum dakikalar içinde, kredi kartı gerekmez.",
           "primaryCta": {
             "label": "Ücretsiz Başlayın",
             "href": "/contact"
           },
           "secondaryCta": {
-            "label": "Demo İsteyin",
+            "label": "Demo Talep Edin",
             "href": "/contact"
           },
           "variant": "split-action"
@@ -254,26 +209,17 @@ export const content: ContentPlan = {
     {
       "slug": "about",
       "title": "Hakkımızda",
-      "metaTitle": "Hakkımızda — Flowsync",
-      "metaDescription": "Flowsync'i kim yaptı, neden yaptı? Ekip iş yönetimini herkes için erişilebilir kılma hikayemizi öğrenin.",
+      "metaTitle": "Hakkımızda — Nexus'un Hikayesi",
+      "metaDescription": "Nexus'un neden kurulduğunu, ekiplere nasıl değer kattığını ve ürün felsefemizi öğrenin.",
       "sections": [
         {
           "type": "hero",
-          "headline": "İş Yönetimini Herkes İçin Kolaylaştırıyoruz",
-          "subheadline": "Karmaşık araçlara değil, ekibinizin gerçekten kullandığı bir platforma inanıyoruz.",
-          "variant": "centered"
-        },
-        {
-          "type": "about",
-          "headline": "Neden Flowsync'i Kurduk?",
-          "body": [
-            "Farklı şirketlerde çalışan bir grup ürün ve operasyon yöneticisi olarak aynı sorunu yaşadık: görev takibi bir araçta, iletişim başka bir araçta, raporlar ise elektronik tablolarda. Flowsync bu dağınıklığı bitirmek için doğdu.",
-            "Sade tasarım ve güçlü otomasyon felsefesiyle; kurulum karmaşası olmadan, ilk günden itibaren çalışan bir platform sunduk."
-          ],
-          "variant": "with-image",
+          "headline": "Dağınık araçlara son",
+          "subheadline": "Ekiplerin gerçekten ihtiyaç duyduğu platformu inşa ediyoruz — sade, hızlı, güçlü.",
+          "variant": "centered",
           "image": {
             "type": "remote",
-            "url": "https://images.unsplash.com/photo-1758873269117-d5845126928a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MzA1NTV8MHwxfHNlYXJjaHw0fHxwcm9kdWN0JTIwdGVhbSUyMHdoaXRlYm9hcmQlMjBwbGFubmluZyUyMHNlc3Npb258ZW58MXwwfHx8MTc3NzEyOTUwMHww&ixlib=rb-4.1.0&q=80&w=1080",
+            "url": "https://images.unsplash.com/photo-1758873269117-d5845126928a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MzA1NTV8MHwxfHNlYXJjaHw4fHxzdGFydHVwJTIwdGVhbSUyMHdoaXRlYm9hcmQlMjBwbGFubmluZyUyMHNlc3Npb258ZW58MXwwfHx8MTc3NzI5OTY2OHww&ixlib=rb-4.1.0&q=80&w=1080",
             "alt": "Team collaborating around a whiteboard in an office.",
             "credit": "Vitaly Gariev / unsplash",
             "creditUrl": "https://unsplash.com/@silverkblack",
@@ -283,31 +229,40 @@ export const content: ContentPlan = {
           }
         },
         {
+          "type": "about",
+          "headline": "Birlikte Daha Hızlı",
+          "body": [
+            "Nexus, ekiplerin birlikte düşünmesini, planlamasını ve üretmesini kolaylaştırmak için kuruldu. Karmaşık kurumsal yazılımların yerine geçen, gerçekten kullanılan bir platform olmayı hedefliyoruz.",
+            "Ürünümüzü startup ve KOBİ ekiplerinin geri bildirimleriyle şekillendiriyoruz. Her özellik bir gerçek problemi çözer — dolgu değil, fayda."
+          ],
+          "variant": "text-only"
+        },
+        {
           "type": "feature-grid",
           "headline": "Çalışma Biçimimiz",
           "items": [
             {
               "icon": "Target",
-              "title": "Sadeliği Önce Koy",
-              "description": "Her özellik, ekibin gerçekten ihtiyaç duyduğu şeyi karşılayana kadar tasarım masasında kalır."
+              "title": "Kullanıcı Odaklı",
+              "description": "Her karar gerçek ekip geri bildirimiyle alınır. Varsayım değil, gözlem."
             },
             {
               "icon": "Rocket",
               "title": "Hızlı Teslimat",
-              "description": "Kullanıcı geri bildirimlerini iki haftalık döngülerle ürüne yansıtırız."
+              "description": "Küçük ve sık güncellemeler — ekibiniz her zaman en iyi versiyonu kullanır."
             },
             {
               "icon": "Shield",
-              "title": "Güvenlik Öncelikli",
-              "description": "Verileriniz şifreli ve güvende. Gizlilik, temelden tasarlanmış bir prensiptir."
+              "title": "Güvenilir Altyapı",
+              "description": "Verileriniz güvende, platform kesintisiz çalışır. Altyapı endişesi yok."
             }
           ],
           "variant": "three-col"
         },
         {
           "type": "cta",
-          "headline": "Ekibinizle birlikte deneyin.",
-          "subheadline": "14 gün ücretsiz, sınırsız erişim. Kredi kartı gerekmez.",
+          "headline": "Nexus'u ekibinizle deneyin",
+          "subheadline": "14 gün boyunca tüm özelliklere ücretsiz erişin.",
           "primaryCta": {
             "label": "Ücretsiz Başla",
             "href": "/contact"
@@ -323,44 +278,44 @@ export const content: ContentPlan = {
     {
       "slug": "services",
       "title": "Özellikler",
-      "metaTitle": "Özellikler — Flowsync",
-      "metaDescription": "Görev takibi, ekip iletişimi, otomasyon ve daha fazlası. Flowsync'in tüm özelliklerini keşfedin.",
+      "metaTitle": "Özellikler — İş Yönetimi ve Ekip İletişimi",
+      "metaDescription": "Nexus'un görev takibi, ekip iletişimi, iş akışı otomasyonu ve raporlama özelliklerini keşfedin.",
       "sections": [
         {
           "type": "hero",
-          "headline": "İşinizi Yürüten Her Araç, Tek Platformda",
-          "subheadline": "Proje yönetiminden otomasyona, ekip iletişiminden raporlamaya kadar.",
+          "headline": "Ekibinizin ihtiyacı olan her şey",
+          "subheadline": "Görev yönetiminden ekip iletişimine, otomasyon araçlarından raporlamaya kadar tek çatı altında.",
           "variant": "centered"
         },
         {
           "type": "services",
-          "headline": "Uzmanlık Alanlarımız",
+          "headline": "Temel Özellikler",
           "items": [
             {
-              "title": "Proje ve Görev Yönetimi",
-              "description": "Kanban, liste veya takvim görünümü arasında geçiş yapın. Görevlere öncelik, son tarih ve sorumlu atayın. Tıkanan noktaları anında fark edin."
+              "title": "Görev ve Proje Yönetimi",
+              "description": "Görevleri oluşturun, atayın ve önceliklendirin. Proje ilerlemesini anlık takip edin, teslim tarihlerini kaçırmayın."
             },
             {
-              "title": "Bağlamsal Ekip İletişimi",
-              "description": "Her görevin kendi yorum akışı var. @mention ile doğru kişiye ulaşın, bildirimler yalnızca ilgili konularda gelir."
+              "title": "Bağlama Dayalı İletişim",
+              "description": "Mesajlaşmayı görev ve projelere bağlayın. Hangi konuşmanın nereye ait olduğunu her zaman bilin."
             },
             {
-              "title": "Otomasyon Kuralları",
-              "description": "Birkaç tıkla otomasyon kurun. Onay akışları, durum güncellemeleri ve hatırlatmalar otomatik çalışır."
+              "title": "İş Akışı Otomasyonu",
+              "description": "Tekrarlayan adımları otomatikleştirin. Ekibinizin zamanını manuel işlemler yerine asıl işe harcamasını sağlayın."
             },
             {
               "title": "Raporlama ve Görünürlük",
-              "description": "Ekip yükünü, tamamlanan görevleri ve geciken işleri tek panelden görün. Haftalık özetler otomatik oluşturulur."
+              "description": "Ekip performansını ve proje ilerlemesini net raporlarla takip edin. Yöneticiler için anlık özet görünümü."
             }
           ],
           "variant": "cards"
         },
         {
           "type": "cta",
-          "headline": "Tüm özellikleri 14 gün boyunca deneyin.",
-          "subheadline": "Kurulum yok, kredi kartı yok. Ekibinizi davet edin ve başlayın.",
+          "headline": "Tüm özellikleri 14 gün deneyin",
+          "subheadline": "Kredi kartı gerekmez. Kurulum dakikalar içinde tamamlanır.",
           "primaryCta": {
-            "label": "Ücretsiz Dene",
+            "label": "Ücretsiz Başla",
             "href": "/contact"
           },
           "secondaryCta": {
@@ -410,74 +365,72 @@ export const content: ContentPlan = {
     {
       "slug": "contact",
       "title": "İletişim",
-      "metaTitle": "İletişim — Flowsync",
-      "metaDescription": "Flowsync ekibiyle iletişime geçin. Sorularınızı yanıtlamak ve demo planlamak için buradayız.",
+      "metaTitle": "İletişim — Nexus ile Görüşün",
+      "metaDescription": "Nexus ekibiyle iletişime geçin. Demo talep edin veya sorularınızı iletin.",
       "sections": [
         {
           "type": "hero",
           "headline": "Konuşalım",
-          "subheadline": "Sorunuz mu var? Demo mu istiyorsunuz? Size dönelim.",
+          "subheadline": "Demo talep edin ya da aklınızdaki soruları sorun — size dönelim.",
           "variant": "centered"
         },
         {
           "type": "contact",
           "headline": "Bize Ulaşın",
-          "email": "merhaba@flowsync.io",
+          "email": "hello@nexus.app",
           "formEnabled": true
         }
       ]
     },
     {
-      "slug": "blog",
-      "title": "Blog",
-      "metaTitle": "Blog — Flowsync",
-      "metaDescription": "Ekip yönetimi, iş akışı otomasyonu ve verimlilik üzerine içerikler. Flowsync Blog.",
+      "slug": "pricing",
+      "title": "Fiyatlandırma",
+      "metaTitle": "Fiyatlandırma — Ekibinize Uygun Plan",
+      "metaDescription": "Nexus fiyatlandırma planlarını inceleyin. Ücretsiz deneme ile başlayın, büyüdükçe ölçeklendirin.",
       "sections": [
         {
           "type": "hero",
-          "headline": "Ekip Verimliliği Üzerine Yazıyoruz",
-          "subheadline": "İş yönetimi, otomasyon ve startup operasyonları hakkında pratik içerikler.",
-          "variant": "centered"
-        },
-        {
-          "type": "blog",
-          "headline": "Blog",
-          "description": "Ürün ve mühendislik ekibimizden paylaşımlar.",
-          "items": [
-            {
-              "title": "Kurumsal kullanıcılar için yeni denetim günlüğü",
-              "summary": "Büyük organizasyonlardan gelen geri bildirimle, tüm kritik aksiyonları filtrelenebilir bir zaman çizelgesinde görüntüleyebileceğiniz yeni panel yayında.",
-              "date": "2026-03-18",
-              "category": "Ürün",
-              "_isPlaceholder": true
-            },
-            {
-              "title": "10 kat büyüyen ekipler için dokümantasyon stratejisi",
-              "summary": "Hızlı büyüyen ekiplerde bilgi nasıl hızla kaybolur ve bu kaybı engellemek için üç basit kural.",
-              "date": "2026-02-25",
-              "category": "Pratik",
-              "_isPlaceholder": true
-            },
-            {
-              "title": "Postgres'i tercih etme nedenlerimiz",
-              "summary": "Öncelik sırası değişmeyen bir veri katmanı için neden hâlâ Postgres seçiyoruz; ve ölçeklendirirken dikkat ettiğimiz üç şey.",
-              "date": "2026-01-30",
-              "category": "Mühendislik",
-              "_isPlaceholder": true
-            }
-          ]
-        },
-        {
-          "type": "cta",
-          "headline": "Okurken de deneyin.",
-          "subheadline": "14 gün ücretsiz erişimle Flowsync'i bugün keşfedin.",
+          "headline": "Ekibinize uygun planı seçin",
+          "subheadline": "Küçük ekipten büyüyen yapılara esnek fiyatlandırma. 14 gün ücretsiz deneyin.",
           "primaryCta": {
             "label": "Ücretsiz Başla",
             "href": "/contact"
           },
+          "variant": "centered"
+        },
+        {
+          "type": "feature-grid",
+          "headline": "Her Planda Neler Var?",
+          "items": [
+            {
+              "icon": "CheckCircle",
+              "title": "Sınırsız Görev",
+              "description": "Tüm planlarda görev ve proje sayısında sınır yok. Ekibiniz büyüdükçe platform büyür."
+            },
+            {
+              "icon": "Shield",
+              "title": "Güvenli Veri Depolama",
+              "description": "Verileriniz şifreli ve güvende. Tüm planlarda standart güvenlik altyapısı dahil."
+            },
+            {
+              "icon": "Users",
+              "title": "Ekip Yönetimi",
+              "description": "Rol bazlı erişim, davet yönetimi ve ekip görünürlüğü her planda mevcut."
+            }
+          ],
+          "variant": "three-col"
+        },
+        {
+          "type": "cta",
+          "headline": "Hemen başlayın, sonra karar verin",
+          "subheadline": "14 günlük ücretsiz deneme süresinde tüm özelliklere erişin.",
+          "primaryCta": {
+            "label": "Ücretsiz Dene",
+            "href": "/contact"
+          },
           "secondaryCta": {
-            "label": "Özellikler",
-            "href": "/services"
+            "label": "Planları İncele",
+            "href": "/pricing"
           },
           "variant": "split-action"
         }
