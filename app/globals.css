@@ -20,8 +20,8 @@
  */
 :root {
   --color-primary: #6366F1;
-  --color-secondary: #0F172A;
-  --color-accent: #F472B6;
+  --color-secondary: #8B5CF6;
+  --color-accent: #EC4899;
   --color-background: #FAFAFA;
   --color-foreground: #0F172A;
   --color-muted: #64748B;
@@ -29,10 +29,10 @@
 
   --font-heading: Inter, system-ui, sans-serif;
   --font-body: Inter, system-ui, sans-serif;
-  --font-heading-weight: 600;
+  --font-heading-weight: 700;
   --font-body-weight: 400;
 
-  --radius: 1rem;
+  --radius: 0.5rem;
   --container-width: 1200px;
 }
 

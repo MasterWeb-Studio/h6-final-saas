@@ -1,12 +1,12 @@
 import type { ContentPlan } from './content-types';
 
 // Bu dosya frontend-builder tarafından güncellendi (polish sonrası).
-// Son güncelleme: 2026-04-27T14:37:17.758Z
+// Son güncelleme: 2026-04-28T11:30:14.784Z
 export const content: ContentPlan = {
   "meta": {
-    "companyName": "Flowbase",
-    "tagline": "Ekibinizin iş akışını tek platformda toplayın",
-    "description": "Flowbase ile görev takibi, ekip iletişimi ve iş yönetimini tek platformda birleştirin. 14 gün ücretsiz deneyin.",
+    "companyName": "Nexus",
+    "tagline": "Ekibinizin ihtiyacı olan her şey, tek platformda.",
+    "description": "Nexus ile görev takibi, takım iletişimi ve iş akışı yönetimini tek platformda birleştirin. 14 gün ücretsiz deneyin.",
     "language": "tr",
     "navigation": [
       {
@@ -31,21 +31,8 @@ export const content: ContentPlan = {
       }
     ],
     "footer": {
-      "about": "Flowbase, dağınık iş süreçlerini tek akıcı platformda toplayan modern B2B SaaS çözümüdür. Ekipler daha hızlı düşünür, planlar ve üretir.",
+      "about": "Nexus, büyüyen ekiplerin daha akıllı çalışmasını sağlayan B2B SaaS platformudur. Görev takibinden takım iletişimine her şey tek yerde.",
       "columns": [
-        {
-          "title": "Şirket",
-          "links": [
-            {
-              "label": "Hakkımızda",
-              "href": "/about"
-            },
-            {
-              "label": "İletişim",
-              "href": "/contact"
-            }
-          ]
-        },
         {
           "title": "Ürün",
           "links": [
@@ -56,6 +43,19 @@ export const content: ContentPlan = {
             {
               "label": "Fiyatlandırma",
               "href": "/pricing"
+            }
+          ]
+        },
+        {
+          "title": "Şirket",
+          "links": [
+            {
+              "label": "Hakkımızda",
+              "href": "/about"
+            },
+            {
+              "label": "İletişim",
+              "href": "/contact"
             }
           ]
         },
@@ -77,7 +77,7 @@ export const content: ContentPlan = {
           ]
         }
       ],
-      "copyright": "© 2026 Flowbase. Tüm hakları saklıdır.",
+      "copyright": "© 2026 Nexus. Tüm hakları saklıdır.",
       "social": [
         {
           "platform": "linkedin",
@@ -94,19 +94,19 @@ export const content: ContentPlan = {
     {
       "slug": "home",
       "title": "Ana Sayfa",
-      "metaTitle": "İş Yönetimi ve Ekip İletişimi — Tek Platform",
-      "metaDescription": "Flowbase ile görev takibi, ekip iletişimi ve iş yönetimini tek platformda birleştirin. 14 gün ücretsiz deneyin.",
+      "metaTitle": "Ekip Yönetimi ve Görev Takip Platformu",
+      "metaDescription": "Nexus ile görev takibi, takım iletişimi ve iş akışı yönetimini tek platformda birleştirin. 14 gün ücretsiz deneyin.",
       "sections": [
         {
           "type": "hero",
-          "headline": "Ekibiniz birlikte daha hızlı ilerler",
-          "subheadline": "Görev takibi, iletişim ve iş akışları tek platformda. Kurulum yok, karmaşa yok — sadece iş.",
+          "headline": "Ekibiniz daha hızlı ilerlesin",
+          "subheadline": "Görev takibinden ekip iletişimine, tüm iş akışınız tek yerde. Yapay zeka destekli araçlarla gereksiz toplantıları ve dağınık süreçleri geride bırakın.",
           "primaryCta": {
-            "label": "14 Gün Ücretsiz Dene",
-            "href": "/contact"
+            "label": "14 Gün Ücretsiz Başla",
+            "href": "/pricing"
           },
           "secondaryCta": {
-            "label": "Özellikleri Keşfet",
+            "label": "Nasıl Çalışır?",
             "href": "/services"
           },
           "variant": "centered",
@@ -123,39 +123,39 @@ export const content: ContentPlan = {
         },
         {
           "type": "feature-grid",
-          "headline": "Neden Flowbase?",
+          "headline": "Neden Nexus?",
           "items": [
             {
               "icon": "CheckCircle",
-              "title": "Görevleri Takip Edin",
-              "description": "Kimin ne yaptığını anlık görün. Öncelikleri belirleyin, teslim tarihlerini kaçırmayın."
+              "title": "Görev Takibi Kolaylaşır",
+              "description": "Projeleri, görevleri ve son tarihleri tek panelden yönetin. Hiçbir şey gözden kaçmaz."
             },
             {
               "icon": "MessageSquare",
-              "title": "Ekiple İletişim Kurun",
-              "description": "Dağınık e-postalar yerine bağlama dayalı mesajlaşma — doğru konuşma, doğru yerde."
+              "title": "Takım İletişimi Güçlenir",
+              "description": "Kanal bazlı mesajlaşma ve anlık bildirimlerle ekibiniz her zaman senkronda kalır."
             },
             {
               "icon": "Zap",
-              "title": "İş Akışını Hızlandırın",
-              "description": "Tekrarlayan süreçleri otomatikleştirin, ekibinizin enerjisini asıl işe yönlendirin."
+              "title": "İş Akışı Hızlanır",
+              "description": "Yapay zeka destekli önerilerle tekrarlayan adımları otomatikleştirin, odağınızı koruyun."
             },
             {
-              "icon": "Layers",
-              "title": "Her Şey Bir Arada",
-              "description": "Proje yönetimi, görev listesi ve ekip takvimi — tek ekranda, dağınıklık yok."
+              "icon": "BarChart",
+              "title": "İlerlemeyi Anlık Görün",
+              "description": "Gerçek zamanlı raporlar ve ekip performans özetleriyle kararlarınızı veriye dayandırın."
             }
           ],
           "variant": "three-col"
         },
         {
           "type": "about",
-          "headline": "Neden Flowbase'u Bulduk",
+          "headline": "Ekipler için tasarlandı",
           "body": [
-            "Hızlı büyüyen ekipler farklı araçlar arasında kaybolur — bir yerde görev, başka yerde mesaj, başka yerde takvim. Flowbase bu dağınıklığı ortadan kaldırmak için tasarlandı.",
-            "Startup ve KOBİ ekiplerine odaklanıyoruz: kurulum karmaşası yok, öğrenme eğrisi minimal, fayda anında hissedilir."
+            "Nexus, 10 ila 200 kişilik teknoloji ekiplerinin günlük operasyon yükünü azaltmak için geliştirildi. Farklı araçlar arasında geçiş yapmak yerine tek bir platformda odaklanın.",
+            "Görev yönetiminden takım iletişimine, iş akışı otomasyonundan raporlamaya kadar ihtiyacınız olan her şey burada."
           ],
-          "variant": "text-only"
+          "variant": "stats-side"
         },
         {
           "type": "stats",
@@ -185,6 +185,19 @@ export const content: ContentPlan = {
         },
         {
           "type": "module-home",
+          "module": "products",
+          "variant": "product-grid-3col",
+          "headline": "Planlar",
+          "description": "Ekibinizin büyüklüğüne göre en uygun planı seçin."
+        },
+        {
+          "type": "module-home",
+          "module": "references",
+          "variant": "reference-logo-bar",
+          "headline": "Güvendikleri Markalar"
+        },
+        {
+          "type": "module-home",
           "module": "newsletter",
           "variant": "newsletter-card",
           "headline": "Ürün güncellemelerini ilk siz öğrenin",
@@ -192,14 +205,14 @@ export const content: ContentPlan = {
         },
         {
           "type": "cta",
-          "headline": "Ekibiniz için doğru an, tam da şimdi",
-          "subheadline": "14 gün ücretsiz deneyin — kurulum dakikalar içinde, kredi kartı gerekmez.",
+          "headline": "Ekibiniz için daha akıllı bir başlangıç",
+          "subheadline": "14 gün boyunca tüm özellikleri ücretsiz keşfedin. Kredi kartı istemiyoruz.",
           "primaryCta": {
-            "label": "Ücretsiz Başlayın",
-            "href": "/contact"
+            "label": "Ücretsiz Başla",
+            "href": "/pricing"
           },
           "secondaryCta": {
-            "label": "Demo Talep Edin",
+            "label": "Demo Talep Et",
             "href": "/contact"
           },
           "variant": "split-action"
@@ -209,67 +222,57 @@ export const content: ContentPlan = {
     {
       "slug": "about",
       "title": "Hakkımızda",
-      "metaTitle": "Hakkımızda — Flowbase'un Hikayesi",
-      "metaDescription": "Flowbase'un neden kurulduğunu, ekiplere nasıl değer kattığını ve ürün felsefemizi öğrenin.",
+      "metaTitle": "Hakkımızda — Nexus'u Neden Yaptık",
+      "metaDescription": "Nexus'un hikayesini, misyonunu ve ekip verimliliğine bakış açısını keşfedin. Modern ekipler için modern araçlar.",
       "sections": [
         {
           "type": "hero",
-          "headline": "Dağınık araçlara son",
-          "subheadline": "Ekiplerin gerçekten ihtiyaç duyduğu platformu inşa ediyoruz — sade, hızlı, güçlü.",
-          "variant": "centered",
-          "image": {
-            "type": "remote",
-            "url": "https://images.unsplash.com/photo-1758873269117-d5845126928a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MzA1NTV8MHwxfHNlYXJjaHw4fHxzdGFydHVwJTIwdGVhbSUyMHdoaXRlYm9hcmQlMjBwbGFubmluZyUyMHNlc3Npb258ZW58MXwwfHx8MTc3NzI5OTY2OHww&ixlib=rb-4.1.0&q=80&w=1080",
-            "alt": "Team collaborating around a whiteboard in an office.",
-            "credit": "Vitaly Gariev / unsplash",
-            "creditUrl": "https://unsplash.com/@silverkblack",
-            "color": "#a6a6a6",
-            "width": 3840,
-            "height": 2160
-          }
+          "headline": "Daha iyi çalışmak için bir neden vardı",
+          "subheadline": "Dağınık araçlar, kopuk iletişim ve kaybolan görevler — Nexus bunları çözmek için doğdu.",
+          "variant": "centered"
         },
         {
           "type": "about",
-          "headline": "Birlikte Daha Hızlı",
+          "headline": "Neden Yaptık?",
           "body": [
-            "Flowbase, ekiplerin birlikte düşünmesini, planlamasını ve üretmesini kolaylaştırmak için kuruldu. Karmaşık kurumsal yazılımların yerine geçen, gerçekten kullanılan bir platform olmayı hedefliyoruz.",
-            "Ürünümüzü startup ve KOBİ ekiplerinin geri bildirimleriyle şekillendiriyoruz. Her özellik bir gerçek problemi çözer — dolgu değil, fayda."
+            "Nexus, ekiplerin farklı uygulamalar arasında kaybolduğunu gözlemleyen bir grup yazılım geliştirici tarafından kuruldu. Amaç basitti: iş yönetimini karmaşıklaştırmak değil, sadeleştirmek.",
+            "Bugün Nexus; görev takibi, iletişim ve iş akışı otomasyonunu tek çatı altında sunan, büyüyen ekiplerin tercih ettiği bir platform."
           ],
-          "variant": "text-only"
+          "variant": "stats-side"
         },
         {
           "type": "feature-grid",
-          "headline": "Çalışma Biçimimiz",
+          "headline": "Nasıl Çalışıyoruz?",
           "items": [
             {
               "icon": "Target",
-              "title": "Kullanıcı Odaklı",
-              "description": "Her karar gerçek ekip geri bildirimiyle alınır. Varsayım değil, gözlem."
+              "title": "Odak Önce Gelir",
+              "description": "Her özellik, ekiplerin odağını dağıtmadan üretken kalmasını sağlamak için tasarlandı."
+            },
+            {
+              "icon": "Users",
+              "title": "Birlikte Daha Güçlü",
+              "description": "Takım dinamiklerini destekleyen araçlar; şeffaflık, hesap verebilirlik ve iş birliği için."
             },
             {
               "icon": "Rocket",
-              "title": "Hızlı Teslimat",
-              "description": "Küçük ve sık güncellemeler — ekibiniz her zaman en iyi versiyonu kullanır."
-            },
-            {
-              "icon": "Shield",
-              "title": "Güvenilir Altyapı",
-              "description": "Verileriniz güvende, platform kesintisiz çalışır. Altyapı endişesi yok."
+              "title": "Sürekli Gelişiyoruz",
+              "description": "Kullanıcı geri bildirimleriyle şekillenen ürün yol haritası; her güncellemede yeni değer."
             }
           ],
           "variant": "three-col"
         },
         {
           "type": "cta",
-          "headline": "Flowbase'u ekibinizle deneyin",
-          "subheadline": "14 gün boyunca tüm özelliklere ücretsiz erişin.",
+          "headline": "Nexus'u ekibinizle deneyin",
+          "subheadline": "14 günlük deneme süresinde tüm özellikler açık, kurulum gerektirmez.",
           "primaryCta": {
             "label": "Ücretsiz Başla",
-            "href": "/contact"
+            "href": "/pricing"
           },
           "secondaryCta": {
-            "label": "Özellikler",
-            "href": "/services"
+            "label": "Bize Ulaşın",
+            "href": "/contact"
           },
           "variant": "split-action"
         }
@@ -278,13 +281,13 @@ export const content: ContentPlan = {
     {
       "slug": "services",
       "title": "Özellikler",
-      "metaTitle": "Özellikler — İş Yönetimi ve Ekip İletişimi",
-      "metaDescription": "Flowbase'un görev takibi, ekip iletişimi, iş akışı otomasyonu ve raporlama özelliklerini keşfedin.",
+      "metaTitle": "Özellikler — Görev Takibi ve Takım İletişimi",
+      "metaDescription": "Nexus'un görev yönetimi, takım iletişimi, otomasyon ve raporlama özelliklerini keşfedin. Ekibiniz için tek platform.",
       "sections": [
         {
           "type": "hero",
-          "headline": "Ekibinizin ihtiyacı olan her şey",
-          "subheadline": "Görev yönetiminden ekip iletişimine, otomasyon araçlarından raporlamaya kadar tek çatı altında.",
+          "headline": "Her ekibin ihtiyacı, tek platformda",
+          "subheadline": "Görev takibinden iş akışı otomasyonuna, Nexus ekibinizin tüm operasyonunu kapsar.",
           "variant": "centered"
         },
         {
@@ -293,33 +296,33 @@ export const content: ContentPlan = {
           "items": [
             {
               "title": "Görev ve Proje Yönetimi",
-              "description": "Görevleri oluşturun, atayın ve önceliklendirin. Proje ilerlemesini anlık takip edin, teslim tarihlerini kaçırmayın."
+              "description": "Kanban, liste veya takvim görünümüyle görevleri atayın, önceliklendirin ve son tarihleri takip edin. Ekibinizin ne üzerinde çalıştığını her zaman bilin."
             },
             {
-              "title": "Bağlama Dayalı İletişim",
-              "description": "Mesajlaşmayı görev ve projelere bağlayın. Hangi konuşmanın nereye ait olduğunu her zaman bilin."
+              "title": "Takım İçi Mesajlaşma",
+              "description": "Proje bazlı kanallar, bire bir mesajlar ve dosya paylaşımıyla tüm iletişiminizi Nexus'ta tutun."
             },
             {
               "title": "İş Akışı Otomasyonu",
-              "description": "Tekrarlayan adımları otomatikleştirin. Ekibinizin zamanını manuel işlemler yerine asıl işe harcamasını sağlayın."
+              "description": "Tekrarlayan adımları otomatikleştirin. Görev atama, bildirim ve durum güncellemelerini kurallara bağlayın."
             },
             {
-              "title": "Raporlama ve Görünürlük",
-              "description": "Ekip performansını ve proje ilerlemesini net raporlarla takip edin. Yöneticiler için anlık özet görünümü."
+              "title": "Raporlama ve Analitik",
+              "description": "Ekip performansını, proje ilerlemesini ve teslim sürelerini gerçek zamanlı panellerle izleyin."
             }
           ],
           "variant": "cards"
         },
         {
           "type": "cta",
-          "headline": "Tüm özellikleri 14 gün deneyin",
-          "subheadline": "Kredi kartı gerekmez. Kurulum dakikalar içinde tamamlanır.",
+          "headline": "Tüm özellikleri ücretsiz keşfedin",
+          "subheadline": "14 günlük deneme süresinde tüm özellikler açık, kredi kartı gerekmez.",
           "primaryCta": {
-            "label": "Ücretsiz Başla",
-            "href": "/contact"
+            "label": "Ücretsiz Dene",
+            "href": "/pricing"
           },
           "secondaryCta": {
-            "label": "Demo İste",
+            "label": "Demo Talep Et",
             "href": "/contact"
           },
           "variant": "split-action"
@@ -365,13 +368,13 @@ export const content: ContentPlan = {
     {
       "slug": "contact",
       "title": "İletişim",
-      "metaTitle": "İletişim — Flowbase ile Görüşün",
-      "metaDescription": "Flowbase ekibiyle iletişime geçin. Demo talep edin veya sorularınızı iletin.",
+      "metaTitle": "İletişim — Nexus ile Konuşalım",
+      "metaDescription": "Nexus ekibiyle iletişime geçin. Demo talebi, teknik destek veya satış sorularınız için buradayız.",
       "sections": [
         {
           "type": "hero",
           "headline": "Konuşalım",
-          "subheadline": "Demo talep edin ya da aklınızdaki soruları sorun — size dönelim.",
+          "subheadline": "Demo talebi, teknik soru veya iş birliği — size en kısa sürede dönüyoruz.",
           "variant": "centered"
         },
         {
@@ -386,16 +389,12 @@ export const content: ContentPlan = {
       "slug": "pricing",
       "title": "Fiyatlandırma",
       "metaTitle": "Fiyatlandırma — Ekibinize Uygun Plan",
-      "metaDescription": "Flowbase fiyatlandırma planlarını inceleyin. Ücretsiz deneme ile başlayın, büyüdükçe ölçeklendirin.",
+      "metaDescription": "Nexus'un Starter, Pro ve Enterprise planlarını karşılaştırın. 14 gün ücretsiz deneyin, kredi kartı gerekmez.",
       "sections": [
         {
           "type": "hero",
-          "headline": "Ekibinize uygun planı seçin",
-          "subheadline": "Küçük ekipten büyüyen yapılara esnek fiyatlandırma. 14 gün ücretsiz deneyin.",
-          "primaryCta": {
-            "label": "Ücretsiz Başla",
-            "href": "/contact"
-          },
+          "headline": "Ekibinizin büyüklüğüne göre plan seçin",
+          "subheadline": "Her plan 14 günlük ücretsiz denemeyle başlar. İstediğiniz zaman yükseltebilirsiniz.",
           "variant": "centered"
         },
         {
@@ -403,34 +402,34 @@ export const content: ContentPlan = {
           "headline": "Her Planda Neler Var?",
           "items": [
             {
-              "icon": "CheckCircle",
-              "title": "Sınırsız Görev",
-              "description": "Tüm planlarda görev ve proje sayısında sınır yok. Ekibiniz büyüdükçe platform büyür."
-            },
-            {
               "icon": "Shield",
-              "title": "Güvenli Veri Depolama",
-              "description": "Verileriniz şifreli ve güvende. Tüm planlarda standart güvenlik altyapısı dahil."
+              "title": "Güvenli Altyapı",
+              "description": "Verileriniz şifreli ve güvende. Tüm planlarda standart güvenlik altyapısı."
             },
             {
-              "icon": "Users",
-              "title": "Ekip Yönetimi",
-              "description": "Rol bazlı erişim, davet yönetimi ve ekip görünürlüğü her planda mevcut."
+              "icon": "Layers",
+              "title": "Sınırsız Entegrasyon",
+              "description": "Slack, Google Workspace ve daha fazlasıyla bağlantı kurun. Tüm planlarda açık."
+            },
+            {
+              "icon": "Clock",
+              "title": "Öncelikli Destek",
+              "description": "Pro ve Enterprise planlarında iş günü içi yanıt garantisi ve canlı destek erişimi."
             }
           ],
           "variant": "three-col"
         },
         {
           "type": "cta",
-          "headline": "Hemen başlayın, sonra karar verin",
-          "subheadline": "14 günlük ücretsiz deneme süresinde tüm özelliklere erişin.",
+          "headline": "Hangi plan size uygun?",
+          "subheadline": "Karar vermekte zorlanıyorsanız ekibimiz doğru planı bulmada yardımcı olur.",
           "primaryCta": {
-            "label": "Ücretsiz Dene",
-            "href": "/contact"
+            "label": "Ücretsiz Başla",
+            "href": "/pricing"
           },
           "secondaryCta": {
-            "label": "Planları İncele",
-            "href": "/pricing"
+            "label": "Satış Ekibiyle Konuş",
+            "href": "/contact"
           },
           "variant": "split-action"
         }

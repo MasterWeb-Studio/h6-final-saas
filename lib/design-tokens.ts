@@ -2,8 +2,8 @@
 export const designTokens = {
   "colors": {
     "primary": "#6366F1",
-    "secondary": "#0F172A",
-    "accent": "#F472B6",
+    "secondary": "#8B5CF6",
+    "accent": "#EC4899",
     "background": "#FAFAFA",
     "foreground": "#0F172A",
     "muted": "#64748B",
@@ -12,22 +12,22 @@ export const designTokens = {
   "typography": {
     "headingFont": "Inter",
     "bodyFont": "Inter",
-    "headingWeight": 600,
+    "headingWeight": 700,
     "bodyWeight": 400,
     "scale": "normal"
   },
   "layout": {
     "style": "minimal",
-    "radius": "lg",
+    "radius": "md",
     "density": "normal",
     "containerWidth": "normal"
   },
   "mood": [
     "modern",
     "innovative",
-    "clean",
     "approachable",
-    "technical"
+    "clean",
+    "energetic"
   ]
 } as const;
 
