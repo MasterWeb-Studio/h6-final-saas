@@ -1,8 +1,8 @@
-# Nexus
+# Flowbase
 
 Ekibinizin ihtiyacı olan her şey, tek platformda.
 
-Nexus ile görev takibi, takım iletişimi ve iş akışı yönetimini tek platformda birleştirin. 14 gün ücretsiz deneyin.
+Flowbase ile görev takibi, takım iletişimi ve iş akışı yönetimini tek platformda birleştirin. 14 gün ücretsiz deneyin.
 
 ## Başlangıç
 
@@ -25,7 +25,7 @@ npm run start
 Proje içinde `/admin` panelinden dashboard ve içerik editörüne erişebilirsin.
 
 - **URL:** http://localhost:3000/admin/login
-- **Şifre:** `234297b3-2f3c-4dfb-a2c5-5f9b72062a6a`
+- **Şifre:** `66619c18-2f8c-4bab-9582-dc2d2424f40d`
 
 Bu şifreyi güvenli yere kaydedin — kaybolursa `.env.local` dosyasındaki `ADMIN_PASSWORD` satırını değiştirip yeniden girebilirsiniz.
 
