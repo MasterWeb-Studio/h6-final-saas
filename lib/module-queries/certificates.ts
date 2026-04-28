@@ -1,5 +1,9 @@
 import type { CertificateRow } from '@/lib/types/certificates';
 
+import { getAdminSupabase } from '@/lib/supabase-admin';
+
+// Sprint 24 G3 — gerçek Supabase implementasyonu.
+const PROJECT_ID = process.env.NEXT_PUBLIC_PROJECT_ID;
 // ---------------------------------------------------------------------------
 // Types
 // ---------------------------------------------------------------------------
@@ -18,18 +22,16 @@ export type ResolvedCertificatePath =
 export async function fetchCertificateList(
   locale: string,
 ): Promise<CertificateRow[]> {
-  // TODO: implement with Supabase client
-  // Example:
-  // const { data, error } = await supabase
-  //   .from('module_certificates')
-  //   .select('*')
-  //   .not('published_at', 'is', null)
-  //   .lte('published_at', new Date().toISOString())
-  //   .order('sort_order', { ascending: true });
-  // if (error) throw error;
-  // return data ?? [];
-  void locale;
-  return [];
+  if (!PROJECT_ID) return [];
+  const supabase = getAdminSupabase();
+  const { data } = await supabase
+    .from('module_certificates')
+    .select('*')
+    .eq('project_id', PROJECT_ID)
+    .not('published_at', 'is', null)
+    .lte('published_at', new Date().toISOString())
+    .order('issue_date', { ascending: true });
+  return (data ?? []) as CertificateRow[];
 }
 
 // ---------------------------------------------------------------------------

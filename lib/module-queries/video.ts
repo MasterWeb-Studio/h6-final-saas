@@ -1,5 +1,9 @@
 import type { VideoRow } from '@/lib/types/video';
 
+import { getAdminSupabase } from '@/lib/supabase-admin';
+
+// Sprint 24 G3 — gerçek Supabase implementasyonu.
+const PROJECT_ID = process.env.NEXT_PUBLIC_PROJECT_ID;
 export type VideoPathResolved =
   | { type: 'item'; item: VideoRow }
   | { type: 'list'; items: VideoRow[] }
@@ -10,16 +14,16 @@ export type VideoPathResolved =
  * Real implementation injected by Scaffolder.
  */
 export async function fetchVideoList(_locale: string): Promise<VideoRow[]> {
-  // TODO: replace with actual Supabase / API call
-  // Example:
-  // const { data } = await supabase
-  //   .from('module_video')
-  //   .select('*')
-  //   .not('published_at', 'is', null)
-  //   .lte('published_at', new Date().toISOString())
-  //   .order('sort_order', { ascending: true });
-  // return data ?? [];
-  return [];
+  if (!PROJECT_ID) return [];
+  const supabase = getAdminSupabase();
+  const { data } = await supabase
+    .from('module_video')
+    .select('*')
+    .eq('project_id', PROJECT_ID)
+    .not('published_at', 'is', null)
+    .lte('published_at', new Date().toISOString())
+    .order('sort_order', { ascending: true });
+  return (data ?? []) as VideoRow[];
 }
 
 /**
@@ -29,18 +33,18 @@ export async function fetchFeaturedVideoList(
   _locale: string,
   limit = 6,
 ): Promise<VideoRow[]> {
-  // TODO: replace with actual Supabase / API call
-  // Example:
-  // const { data } = await supabase
-  //   .from('module_video')
-  //   .select('*')
-  //   .eq('is_featured', true)
-  //   .not('published_at', 'is', null)
-  //   .lte('published_at', new Date().toISOString())
-  //   .order('sort_order', { ascending: true })
-  //   .limit(limit);
-  // return data ?? [];
-  return [];
+  if (!PROJECT_ID) return [];
+  const supabase = getAdminSupabase();
+  const { data } = await supabase
+    .from('module_video')
+    .select('*')
+    .eq('project_id', PROJECT_ID)
+    .eq('is_featured', true)
+    .not('published_at', 'is', null)
+    .lte('published_at', new Date().toISOString())
+    .order('sort_order', { ascending: true })
+    .limit(limit);
+  return (data ?? []) as VideoRow[];
 }
 
 /**

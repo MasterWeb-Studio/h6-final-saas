@@ -1,5 +1,9 @@
 import type { GalleryRow } from '@/lib/types/gallery';
 
+import { getAdminSupabase } from '@/lib/supabase-admin';
+
+// Sprint 24 G3 — gerçek Supabase implementasyonu.
+const PROJECT_ID = process.env.NEXT_PUBLIC_PROJECT_ID;
 // ---------------------------------------------------------------------------
 // Types
 // ---------------------------------------------------------------------------
@@ -32,20 +36,16 @@ export async function fetchGalleryList(
     sort?: 'newest' | 'taken-newest';
   }
 ): Promise<GalleryRow[]> {
-  // TODO: implement with Supabase client
-  // Example:
-  // const supabase = createServerClient();
-  // let query = supabase
-  //   .from('module_gallery')
-  //   .select('*')
-  //   .not('published_at', 'is', null)
-  //   .lte('published_at', new Date().toISOString())
-  //   .order(options?.sort === 'taken-newest' ? 'taken_at' : 'published_at', { ascending: false })
-  //   .limit(options?.limit ?? 24);
-  // if (options?.categoryId) query = query.eq('category_id', options.categoryId);
-  // const { data } = await query;
-  // return data ?? [];
-  return [];
+  if (!PROJECT_ID) return [];
+  const supabase = getAdminSupabase();
+  const { data } = await supabase
+    .from('module_gallery')
+    .select('*')
+    .eq('project_id', PROJECT_ID)
+    .not('published_at', 'is', null)
+    .lte('published_at', new Date().toISOString())
+    .order('published_at', { ascending: false });
+  return (data ?? []) as GalleryRow[];
 }
 
 // ---------------------------------------------------------------------------

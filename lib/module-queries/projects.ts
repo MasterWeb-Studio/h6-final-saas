@@ -1,5 +1,9 @@
 import type { ProjectsRow } from '@/lib/types/projects';
 
+import { getAdminSupabase } from '@/lib/supabase-admin';
+
+// Sprint 24 G3 — gerçek Supabase implementasyonu.
+const PROJECT_ID = process.env.NEXT_PUBLIC_PROJECT_ID;
 /**
  * Resolved path result — discriminated union
  */
@@ -25,18 +29,16 @@ export async function fetchProjectsList(
     offset?: number;
   },
 ): Promise<ProjectsRow[]> {
-  // TODO: Scaffolder replaces this with real implementation
-  // Example:
-  // const { data } = await supabase
-  //   .from('module_projects')
-  //   .select('*')
-  //   .not('published_at', 'is', null)
-  //   .lte('published_at', new Date().toISOString())
-  //   .order('completion_date', { ascending: false })
-  //   .limit(options?.limit ?? 12);
-  // return data ?? [];
-  void options;
-  return [];
+  if (!PROJECT_ID) return [];
+  const supabase = getAdminSupabase();
+  const { data } = await supabase
+    .from('module_projects')
+    .select('*')
+    .eq('project_id', PROJECT_ID)
+    .not('published_at', 'is', null)
+    .lte('published_at', new Date().toISOString())
+    .order('sort_order', { ascending: true });
+  return (data ?? []) as ProjectsRow[];
 }
 
 /**

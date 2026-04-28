@@ -1,5 +1,9 @@
 import type { NewsRow } from '@/lib/types/news';
 
+import { getAdminSupabase } from '@/lib/supabase-admin';
+
+// Sprint 24 G3 — gerçek Supabase implementasyonu.
+const PROJECT_ID = process.env.NEXT_PUBLIC_PROJECT_ID;
 export interface NewsListOptions {
   categorySlug?: string | null;
   tag?: string | null;
@@ -31,26 +35,31 @@ export async function fetchNewsList(
   locale: string,
   options: NewsListOptions = {},
 ): Promise<NewsListResult> {
-  void locale;
-  void options;
-  // TODO: implement with Supabase
-  // const { categorySlug, tag, page = 1, pageSize = 12 } = options;
-  // const supabase = createServerClient();
-  // let query = supabase
-  //   .from('module_news')
-  //   .select('*', { count: 'exact' })
-  //   .eq('project_id', PROJECT_ID)
-  //   .not('published_at', 'is', null)
-  //   .lte('published_at', new Date().toISOString())
-  //   .order('published_at', { ascending: false })
-  //   .range((page - 1) * pageSize, page * pageSize - 1);
-  // if (categorySlug) { ... }
-  // if (tag) { ... }
-  // const { data, count, error } = await query;
-  // if (error) throw error;
-  // const total = count ?? 0;
-  // return { data: data ?? [], total, page, pageSize, totalPages: Math.ceil(total / pageSize) };
-  return { data: [], total: 0, page: 1, pageSize: 12, totalPages: 0 };
+  if (!PROJECT_ID) return { data: [], total: 0, page: 1, pageSize: 12, totalPages: 0 };
+  const supabase = getAdminSupabase();
+  const pageSize = options.pageSize ?? 12;
+  const page = options.page ?? 1;
+  const from = (page - 1) * pageSize;
+  const to = from + pageSize - 1;
+  let query = supabase
+    .from('module_news')
+    .select('*', { count: 'exact' })
+    .eq('project_id', PROJECT_ID)
+    .not('published_at', 'is', null)
+    .lte('published_at', new Date().toISOString())
+    .order('published_at', { ascending: false });
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const _locale = locale;
+  if (options.categorySlug) query = query.contains('category_id', options.categorySlug);
+  const { data, count } = await query.range(from, to);
+  const total = count ?? 0;
+  return {
+    data: (data ?? []) as NewsRow[],
+    total,
+    page,
+    pageSize,
+    totalPages: Math.ceil(total / pageSize),
+  };
 }
 
 export async function fetchNewsCategories(locale: string): Promise<NewsCategory[]> {

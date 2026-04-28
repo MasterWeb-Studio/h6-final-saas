@@ -1,4 +1,8 @@
 import type { TeamRow } from '@/lib/types/team';
+import { getAdminSupabase } from '@/lib/supabase-admin';
+
+// Sprint 24 G3 — gerçek Supabase implementasyonu (placeholder return [] yerine).
+const PROJECT_ID = process.env.NEXT_PUBLIC_PROJECT_ID;
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -20,18 +24,19 @@ export type TeamResolved = TeamResolvedItem | TeamResolvedNotFound;
  * Scaffolder replaces this with a real Supabase / fetch call.
  */
 export async function fetchTeamList(
-  locale: string, // eslint-disable-line @typescript-eslint/no-unused-vars
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  locale: string,
 ): Promise<TeamRow[]> {
-  // TODO: implement — e.g.
-  // const { data } = await supabase
-  //   .from('module_team')
-  //   .select('*')
-  //   .eq('project_id', PROJECT_ID)
-  //   .not('published_at', 'is', null)
-  //   .lte('published_at', new Date().toISOString())
-  //   .order('sort_order', { ascending: true });
-  // return data ?? [];
-  return [];
+  if (!PROJECT_ID) return [];
+  const supabase = getAdminSupabase();
+  const { data } = await supabase
+    .from('module_team')
+    .select('*')
+    .eq('project_id', PROJECT_ID)
+    .not('published_at', 'is', null)
+    .lte('published_at', new Date().toISOString())
+    .order('sort_order', { ascending: true });
+  return (data ?? []) as TeamRow[];
 }
 
 /**
@@ -61,18 +66,19 @@ export async function resolveTeamPath(
  * `count` maps to spec.frontend.homeSections[*].defaultCount.
  */
 export async function fetchTeamForHomeSection(
-  locale: string, // eslint-disable-line @typescript-eslint/no-unused-vars
-  count: number,  // eslint-disable-line @typescript-eslint/no-unused-vars
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  locale: string,
+  count: number,
 ): Promise<TeamRow[]> {
-  // TODO: implement — e.g.
-  // const { data } = await supabase
-  //   .from('module_team')
-  //   .select('*')
-  //   .eq('project_id', PROJECT_ID)
-  //   .not('published_at', 'is', null)
-  //   .lte('published_at', new Date().toISOString())
-  //   .order('sort_order', { ascending: true })
-  //   .limit(count);
-  // return data ?? [];
-  return [];
+  if (!PROJECT_ID) return [];
+  const supabase = getAdminSupabase();
+  const { data } = await supabase
+    .from('module_team')
+    .select('*')
+    .eq('project_id', PROJECT_ID)
+    .not('published_at', 'is', null)
+    .lte('published_at', new Date().toISOString())
+    .order('sort_order', { ascending: true })
+    .limit(count);
+  return (data ?? []) as TeamRow[];
 }

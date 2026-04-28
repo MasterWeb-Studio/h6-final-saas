@@ -1,7 +1,7 @@
 import type { ContentPlan } from './content-types';
 
 // Bu dosya frontend-builder tarafından güncellendi (polish sonrası).
-// Son güncelleme: 2026-04-28T11:35:17.543Z
+// Son güncelleme: 2026-04-28T15:08:23.816Z
 export const content: ContentPlan = {
   "meta": {
     "companyName": "Flowbase",
@@ -99,10 +99,10 @@ export const content: ContentPlan = {
       "sections": [
         {
           "type": "hero",
-          "headline": "Ekibiniz daha hızlı ilerlesin",
-          "subheadline": "Görev takibinden ekip iletişimine, tüm iş akışınızı tek yerden yönetin. Yapay zeka destekli araçlarla daha az zaman harcayın, daha fazlasını başarın.",
+          "headline": "Ekibiniz en iyi işini Nexus'ta yapar",
+          "subheadline": "Görev takibinden ekip iletişimine, tüm iş akışınız tek yerde. Kurulumu dakikalar alır.",
           "primaryCta": {
-            "label": "14 Gün Ücretsiz Dene",
+            "label": "14 Gün Ücretsiz Başla",
             "href": "/pricing"
           },
           "secondaryCta": {
@@ -205,14 +205,14 @@ export const content: ContentPlan = {
         },
         {
           "type": "cta",
-          "headline": "Ekibiniz için doğru an, tam şimdi",
+          "headline": "Ekibiniz için daha akıllı bir başlangıç",
           "subheadline": "14 gün boyunca tüm özellikleri ücretsiz keşfedin. Kredi kartı istemiyoruz.",
           "primaryCta": {
-            "label": "Ücretsiz Başlayın",
+            "label": "Ücretsiz Başla",
             "href": "/pricing"
           },
           "secondaryCta": {
-            "label": "Demo Talep Edin",
+            "label": "Demo Talep Et",
             "href": "/contact"
           },
           "variant": "split-action"

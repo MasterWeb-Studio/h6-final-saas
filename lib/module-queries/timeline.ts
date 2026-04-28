@@ -1,5 +1,9 @@
 import type { TimelineRow } from '@/lib/types/timeline';
 
+import { getAdminSupabase } from '@/lib/supabase-admin';
+
+// Sprint 24 G3 — gerçek Supabase implementasyonu.
+const PROJECT_ID = process.env.NEXT_PUBLIC_PROJECT_ID;
 export type TimelineResolved =
   | { type: 'not_found' }
   | { type: 'item'; item: TimelineRow }
@@ -13,21 +17,17 @@ export async function fetchTimelineList(
   locale: string,
   limit?: number,
 ): Promise<TimelineRow[]> {
-  // TODO: replace with actual Supabase / API call
-  // Example:
-  // const { data } = await supabase
-  //   .from('module_timeline')
-  //   .select('*')
-  //   .not('published_at', 'is', null)
-  //   .lte('published_at', new Date().toISOString())
-  //   .order('year', { ascending: false })
-  //   .order('month', { ascending: false, nullsFirst: false })
-  //   .order('sort_order', { ascending: true })
-  //   .limit(limit ?? 50);
-  // return data ?? [];
-  void locale;
-  void limit;
-  return [];
+  if (!PROJECT_ID) return [];
+  const supabase = getAdminSupabase();
+  const { data } = await supabase
+    .from('module_timeline')
+    .select('*')
+    .eq('project_id', PROJECT_ID)
+    .not('published_at', 'is', null)
+    .lte('published_at', new Date().toISOString())
+    .order('year', { ascending: false })
+    .order('month', { ascending: true });
+  return (data ?? []) as TimelineRow[];
 }
 
 /**

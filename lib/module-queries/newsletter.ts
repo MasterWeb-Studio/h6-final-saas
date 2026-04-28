@@ -1,3 +1,7 @@
+import { getAdminSupabase } from '@/lib/supabase-admin';
+
+// Sprint 24 G3 — gerçek Supabase implementasyonu.
+const PROJECT_ID = process.env.NEXT_PUBLIC_PROJECT_ID;
 // ─── Newsletter Module Queries ────────────────────────────────────────────────
 // NOTE: This module is subscriber-facing (write-only from public side).
 // There is no public list or detail page — hasDetailPage: false.

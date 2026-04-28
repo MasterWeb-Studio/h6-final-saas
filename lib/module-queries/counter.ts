@@ -1,3 +1,7 @@
+import { getAdminSupabase } from '@/lib/supabase-admin';
+
+// Sprint 24 G3 — gerçek Supabase implementasyonu.
+const PROJECT_ID = process.env.NEXT_PUBLIC_PROJECT_ID;
 /**
  * module-queries/counter.ts
  *
@@ -21,20 +25,16 @@ export async function fetchCounterList(
   _locale: string,
   limit?: number,
 ): Promise<CounterRow[]> {
-  // TODO: Scaffolder bu fonksiyonu Supabase client ile replace eder.
-  // Örnek implementasyon:
-  //
-  // const { data, error } = await supabase
-  //   .from('module_counter')
-  //   .select('*')
-  //   .not('published_at', 'is', null)
-  //   .lte('published_at', new Date().toISOString())
-  //   .order('sort_order', { ascending: true })
-  //   .limit(limit ?? 100);
-  //
-  // if (error) throw error;
-  // return data ?? [];
-
-  void limit;
-  return [];
+  if (!PROJECT_ID) return [];
+  const supabase = getAdminSupabase();
+  let query = supabase
+    .from('module_counter')
+    .select('*')
+    .eq('project_id', PROJECT_ID)
+    .not('published_at', 'is', null)
+    .lte('published_at', new Date().toISOString())
+    .order('sort_order', { ascending: true });
+  if (limit) query = query.limit(limit);
+  const { data } = await query;
+  return (data ?? []) as CounterRow[];
 }

@@ -1,5 +1,9 @@
 import type { ServicesRow } from '@/lib/types/services';
 
+import { getAdminSupabase } from '@/lib/supabase-admin';
+
+// Sprint 24 G3 — gerçek Supabase implementasyonu.
+const PROJECT_ID = process.env.NEXT_PUBLIC_PROJECT_ID;
 // ---------------------------------------------------------------------------
 // Resolved path types
 // ---------------------------------------------------------------------------
@@ -16,17 +20,16 @@ export type ResolvedServicesPath =
 export async function fetchServicesList(
   locale: string,
 ): Promise<ServicesRow[]> {
-  // TODO: replace with real data-fetching implementation
-  // Example Supabase:
-  // const { data } = await supabase
-  //   .from('module_services')
-  //   .select('*')
-  //   .not('published_at', 'is', null)
-  //   .lte('published_at', new Date().toISOString())
-  //   .order('sort_order', { ascending: true });
-  // return data ?? [];
-  void locale;
-  return [];
+  if (!PROJECT_ID) return [];
+  const supabase = getAdminSupabase();
+  const { data } = await supabase
+    .from('module_services')
+    .select('*')
+    .eq('project_id', PROJECT_ID)
+    .not('published_at', 'is', null)
+    .lte('published_at', new Date().toISOString())
+    .order('sort_order', { ascending: true });
+  return (data ?? []) as ServicesRow[];
 }
 
 // ---------------------------------------------------------------------------
